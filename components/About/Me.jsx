@@ -19,7 +19,7 @@ export default function Me() {
     return (
       <div className={styles.about_me}>
         <p>
-          I'm a junior full stack web developer whose looking for mentorship in
+          I&apos;m a junior full stack web developer whose looking for mentorship in
           his next role. I have a strong background using the latest tech
           stacks, specializing in MongoDB, ExpressJS, NodeJS, and ReactJS (MERN)
           as my preferred tech stack.
@@ -38,7 +38,7 @@ export default function Me() {
         <p>
           This is a React app that demonstrates the use of custom components,
           React hooks, and Redux. Rather than using native components or styling
-          frameworks, I've made it a point to use pure CSS, vanilla JS, and HTML
+          frameworks, I&apos;ve made it a point to use pure CSS, vanilla JS, and HTML
           to showcase foundational skills.
         </p>
         <p>

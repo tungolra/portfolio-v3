@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "@/styles/Home.module.css";
-import Me from "./Home/Me";
+import Me from "../components/About/Me";
 import MatrixBackground from "@/components/MatrixBackground/MatrixBackground";
 import Skills from "@/components/Skills/Skills";
 import ProjectsCollage from "@/components/Projects/ProjectsCollage";
@@ -60,7 +60,7 @@ export default function Home() {
           <Header />
           <About />
           <Skills/>
-          <ProjectsCollage/>
+          {/* <ProjectsCollage/> */}
         </div>
       </div>
     </>

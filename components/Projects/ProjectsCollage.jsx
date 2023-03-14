@@ -83,7 +83,7 @@ export default function ProjectsCollage() {
 
   return (
     <div id={styles.projects} className={styles.projects_page}>
-      <h4>What I've Worked On</h4>
+      <h4>What I&apos;ve Worked On</h4>
       {/* <h5>Filter By:</h5> */}
       <div className={styles.filter_container}>
         {categoryButtonsByType()}
