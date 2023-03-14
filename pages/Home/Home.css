@@ -34,7 +34,7 @@
 }
 
 /* about */
-.about_container {
+.about-container {
   height: auto;
   width: 100%;
   padding: 5vmin;
@@ -42,29 +42,29 @@
   color: white;
 }
 
-.about_details {
+.about-details {
   display: flex;
   flex-direction: column;
 }
-.about_details > h4,
-.about_details > img {
+.about-details > h4,
+.about-details > img {
   text-align: center;
 }
-.about_card {
+.about-card {
   display: flex;
   flex-direction: column;
 }
-.profile_pic {
+.profile-pic {
   aspect-ratio: 1/1;
   object-fit: contain;
   height: 50vmin;
 }
 
-/* section {
+section {
   margin: 3vmin 0;
-} */
+}
 
-.about_title {
+.about-title {
   font-size: 8vmin;
   margin-bottom: 2vmin;
   color: #99ff99;
@@ -72,25 +72,25 @@
 
 /* Me */
 
-.section_container {
+.section-container {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
-.container_display > * {
+.container-display > * {
   padding: 3vmin;
   border: 1px solid white;
   background-color: rgba(0, 0, 0, 0.388);
 }
 
-.section_select {
+.section-select {
   padding: 1vmin;
   margin: 1vmin 0;
   width: 100%;
   height: 100%;
 }
 
-.me_container > * {
+.me-container > * {
   padding: 1vmin;
 }
 
@@ -98,7 +98,7 @@
   display: grid;
   grid-template-columns: 1fr 7fr;
 }
-.edu_img {
+.edu-img {
   aspect-ratio: 1/1;
   width: 50px;
   border-radius: 100%;
@@ -106,15 +106,15 @@
   background-color: #ffffff;
 }
 
-.my_education > .edu_details {
+.my-education > .edu-details {
   margin-bottom: 1vmin;
 }
 
-.my_skills {
+.my-skills {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.skill_details {
+.skill-details {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -151,7 +151,7 @@
 }
 
 /* footer */
-/* footer {
+footer {
   margin-top: auto;
   background-color: black;
   color: white;
@@ -160,7 +160,7 @@
   width: 100%;
   justify-content: space-between;
   padding: 2vmin;
-} */
+}
 
 .contact-details {
   display: flex;
@@ -265,9 +265,9 @@
     transition: all 0.3s ease;
     height: 45px;
   }
-  /* footer {
+  footer {
     justify-content: center;
-  } */
+  }
   .contact-details {
     text-align: center;
   }
