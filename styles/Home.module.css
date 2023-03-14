@@ -10,7 +10,7 @@
 }
 
 /* header */
-.header-container {
+.header_container {
   height: 50vh;
   display: flex;
   justify-content: center;
@@ -25,11 +25,12 @@
 }
 .row {
   width: auto;
+
 }
-.header-container > h3 {
+.header_container > h3 {
   text-align: center;
 }
-.header-container > h4 {
+.header_container > h4 {
   text-align: center;
 }
 
@@ -94,7 +95,7 @@
   padding: 1vmin;
 }
 
-.edu-details {
+.edu_details {
   display: grid;
   grid-template-columns: 1fr 7fr;
 }
@@ -132,7 +133,7 @@
   border: 2px solid #99ff99;
 }
 
-.about-me > p,
+.about_me > p,
 .read-more > p {
   font-weight: bold;
   margin-bottom: 2vmin;

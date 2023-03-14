@@ -59,7 +59,7 @@ export default function Me() {
     return (
       <div className={styles.my_education}>
         {seed.education.map((e) => (
-          <div className={styles.edu_details}>
+          <div key={e.img} className={styles.edu_details}>
             <div>
               <img
                 width={100}
@@ -86,6 +86,7 @@ export default function Me() {
       <>
         {sections.map((s) => (
           <button
+            key={s}
             className={[styles.filter_button, styles.section_select]}
             onClick={() => setContainerDisplay(chooseDisplay(s))}
           >

@@ -4,13 +4,27 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "@/styles/Home.module.css";
 import Me from "./Home/Me";
+import MatrixBackground from "@/components/MatrixBackground/MatrixBackground";
+import Skills from "@/components/Skills/Skills";
+import ProjectsCollage from "@/components/Projects/ProjectsCollage";
 
+function Header() {
+  return (
+    <div className={styles.header_container}>
+      <MatrixBackground />
+      <div className={[styles.row, styles.title]}>
+        <h3>Ralph Tu&#241;gol</h3>
+        <h4>Full-Stack Software Developer</h4>
+      </div>
+    </div>
+  );
+}
 function About() {
   return (
     <div className={styles.about_container}>
       <div className={styles.about_wrapper}>
-        <div className="about_details">
-          <h4 className="about_title">Welcome!</h4>
+        <div className={styles.about_details}>
+          <h4 className={styles.about_title}>Welcome!</h4>
           <Image
             src="/profile-picture.jpg"
             alt="profile-picture"
@@ -41,9 +55,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <About />
-      </main>
+      <div className={styles.bg_image}>
+        <div className={styles.home_container}>
+          <Header />
+          <About />
+          <Skills/>
+          <ProjectsCollage/>
+        </div>
+      </div>
     </>
   );
 }

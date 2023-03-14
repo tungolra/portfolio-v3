@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import * as seed from "../../seed";
-import "./ProjectsCollage.css";
+// import "./ProjectsCollage.css";
+import styles from "@/styles/Projects.module.css";
 import {
   allProjects,
   featuredProjects,
@@ -29,12 +30,13 @@ export default function ProjectsCollage() {
     ];
 
     return (
-      <div className="category-container">
+      <div className={styles.category_container}>
         <h4>By Category</h4>
-        <div className="options-container">
+        <div className={styles.options_container}>
           {categories.map((c) => (
             <button
-              className="filter-button"
+              key={c.category}
+              className={styles.filter_button}
               onClick={() =>
                 setProjectFilter({ filter: c.filter, header: c.category })
               }
@@ -55,12 +57,13 @@ export default function ProjectsCollage() {
     return (
       <>
         {categories.map((c) => (
-          <div className="category-container">
+          <div key={c.category} className={styles.category_container}>
             <h4>{c.category}</h4>
-            <div className="options-container">
+            <div className={styles.options_container}>
               {c.data.map((s) => (
                 <button
-                  className="filter-button"
+                  key={s.skill}
+                  className={styles.filter_button}
                   onClick={() =>
                     setProjectFilter({
                       filter: filterProjectsBySkill(s.skill, c.category),
@@ -79,20 +82,20 @@ export default function ProjectsCollage() {
   };
 
   return (
-    <div id="projects" className="projects-page">
+    <div id={styles.projects} className={styles.projects_page}>
       <h4>What I've Worked On</h4>
       {/* <h5>Filter By:</h5> */}
-      <div className="filter-container">
+      <div className={styles.filter_container}>
         {categoryButtonsByType()}
         {categoryButtonsBySkill()}
       </div>
-      <div className="projects-container">
-        <div className="collage-container">
+      <div className={styles.projects_container}>
+        <div className={styles.collage_container}>
           <h5>
             Viewing: {projectFilter.header} ({projectFilter.filter.length}/
             {allProjects().length})
           </h5>
-          <div className="card-container">{projectFilter.filter}</div>
+          <div className={styles.card_container}>{projectFilter.filter}</div>
         </div>
       </div>
     </div>
