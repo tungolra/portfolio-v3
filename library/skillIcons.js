@@ -1,12 +1,12 @@
-import styles from "@/styles/Skill.module.css";
+import styles from "@/styles/ProjectsCollage.module.css";
 
 export function skillIcons(obj) {
   return (
-    <div className={styles.skills_item}>
+    <div className={styles.skillsItem}>
       {obj.map((skill, idx) => (
         <img
           key={idx}
-          className="tech-icons"
+          className="techIcons"
           src={skill.img}
           alt={skill.skill}
         />

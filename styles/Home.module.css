@@ -3,6 +3,7 @@
   flex-direction: column;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+  background: linear-gradient(0.25turn, #000000, #929292, #000000);
 }
 
 /* header */
@@ -33,7 +34,7 @@
   height: auto;
   width: 100%;
   padding: 5vmin;
-  background-color: rgba(0, 0, 0, 0.388);
+  /* background-color: rgba(0, 0, 0, 0.388); */
   color: white;
 }
 
@@ -53,6 +54,8 @@
   aspect-ratio: 1/1;
   object-fit: contain;
   height: 50vmin;
+  width: auto;
+  border-radius: 100%;
 }
 
 .aboutTitle {
@@ -129,8 +132,7 @@
   border: 2px solid #99ff99;
 }
 
-.aboutMe > p,
-.read-more > p {
+.aboutMe > p {
   font-weight: bold;
   margin-bottom: 2vmin;
   text-indent: 2em;
@@ -138,17 +140,17 @@
   transition: 0.4s;
 }
 
-.about-me > p > ul {
+.aboutMe > p > ul {
   margin-left: 2em;
 }
 
-.about-me > p > a {
+.aboutMe > p > a {
   text-decoration: none;
   color: #99ff99;
 }
 
 /* footer */
-/* footer {
+#footer {
   margin-top: auto;
   background-color: black;
   color: white;
@@ -157,15 +159,15 @@
   width: 100%;
   justify-content: space-between;
   padding: 2vmin;
-} */
+}
 
-.contact-details {
+.contactDetails {
   display: flex;
   flex-direction: column;
   text-align: left;
   font-weight: bold;
 }
-.contact-details > a > svg {
+.contactDetails > a > svg {
   display: none;
 }
 .mailto {
@@ -173,18 +175,18 @@
   text-decoration: none;
 }
 
-.socials-icons-container {
+.socialsIconsContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 
-.socials-icons-container > div > a > img {
+.socialsIconsContainer > div > a > img {
   margin: 0 7px;
 }
 
-.socials-icons {
+.socialsIcons {
   display: flex;
   height: 30px;
   aspect-ratio: 1/1;
@@ -200,10 +202,10 @@
 }
 
 @media only screen and (min-width: 961px) {
-  .home-container {
+  .homeContainer {
     align-items: center;
   }
-  .about-container {
+  .aboutContainer {
     display: flex;
     justify-content: center;
   }
@@ -212,35 +214,32 @@
     display: flex;
     flex-direction: row;
   }
-  .about-details {
+  .aboutDetails {
     width: 70%;
   }
-  .about-card {
+  .aboutCard {
     display: flex;
     flex-direction: row;
   }
   .about {
     width: 70%;
   }
-  .about-title {
+  .aboutTitle {
     text-align: left;
   }
-  .section-container > .filter-button {
+  .sectionContainer > .filterButton {
     font-size: 16px;
   }
-  .me-container {
+  .meContainer {
     width: 70vmin;
   }
   .me > p {
     font-size: 18px;
   }
-  .read-more {
-    font-size: 18px;
-  }
   .contact-details > a > svg {
     display: unset;
   }
-  .socials-icons-container {
+  .socialsIconsContainer {
     display: unset;
     position: fixed;
     top: 50%;
@@ -251,12 +250,12 @@
     background-color: rgba(255, 255, 255, 0.098);
   }
 
-  .socials-icons-container > div {
+  .socialsIconsContainer > div {
     display: flex;
     justify-content: center;
     margin: 3vmin 0;
   }
-  .socials-icons {
+  .socialsIcons {
     display: block;
     text-align: center;
     transition: all 0.3s ease;
@@ -265,7 +264,7 @@
   /* footer {
     justify-content: center;
   } */
-  .contact-details {
+  .contactDetails {
     text-align: center;
   }
 }

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import * as seed from "../seed";
-// import "./ProjectsCollage.css";
-import styles from "@/styles/Projects.module.css";
+import styles from "@/styles/ProjectsCollage.module.css";
 import {
   allProjects,
   featuredProjects,
@@ -30,13 +29,13 @@ export default function ProjectsCollage() {
     ];
 
     return (
-      <div className={styles.category_container}>
+      <div className={styles.categoryContainer}>
         <h4>By Category</h4>
-        <div className={styles.options_container}>
+        <div className={styles.optionsContainer}>
           {categories.map((c) => (
             <button
               key={c.category}
-              className={styles.filter_button}
+              className={styles.filterButton}
               onClick={() =>
                 setProjectFilter({ filter: c.filter, header: c.category })
               }
@@ -57,13 +56,13 @@ export default function ProjectsCollage() {
     return (
       <>
         {categories.map((c) => (
-          <div key={c.category} className={styles.category_container}>
+          <div key={c.category} className={styles.categoryContainer}>
             <h4>{c.category}</h4>
-            <div className={styles.options_container}>
+            <div className={styles.optionsContainer}>
               {c.data.map((s) => (
                 <button
                   key={s.skill}
-                  className={styles.filter_button}
+                  className={styles.filterButton}
                   onClick={() =>
                     setProjectFilter({
                       filter: filterProjectsBySkill(s.skill, c.category),
@@ -82,20 +81,20 @@ export default function ProjectsCollage() {
   };
 
   return (
-    <div id={styles.projects} className={styles.projects_page}>
+    <div id={styles.projects} className={styles.projectsPage}>
       <h4>What I&apos;ve Worked On</h4>
       {/* <h5>Filter By:</h5> */}
-      <div className={styles.filter_container}>
+      <div className={styles.filterContainer}>
         {categoryButtonsByType()}
         {categoryButtonsBySkill()}
       </div>
-      <div className={styles.projects_container}>
-        <div className={styles.collage_container}>
+      <div className={styles.projectsContainer}>
+        <div className={styles.collageContainer}>
           <h5>
             Viewing: {projectFilter.header} ({projectFilter.filter.length}/
             {allProjects().length})
           </h5>
-          <div className={styles.card_container}>{projectFilter.filter}</div>
+          <div className={styles.cardContainer}>{projectFilter.filter}</div>
         </div>
       </div>
     </div>

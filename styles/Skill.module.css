@@ -1,7 +1,6 @@
 .skills_container {
     padding: 5vmin 0;
     height: auto;
-    background-color: rgba(0, 0, 0, 0.388);
     color: white;
     display: flex;
     flex-direction: column;

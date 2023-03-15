@@ -6,6 +6,7 @@ import Skills from "@/components/Skills";
 import ProjectsCollage from "@/components/ProjectsCollage";
 
 import React from "react";
+import Footer from "./Footer";
 
 function Header() {
   return (
@@ -56,8 +57,10 @@ export default function Welcome() {
         <Header />
         <About />
         <Skills />
-        {/* <ProjectsCollage/> */}
+        <ProjectsCollage/>
+
       </div>
+      <Footer/>
     </>
   );
 }
