@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import * as seed from "../../seed";
+import * as seed from "../seed";
 // import "./ProjectsCollage.css";
 import styles from "@/styles/Projects.module.css";
 import {
@@ -7,7 +7,7 @@ import {
   featuredProjects,
   filterProjectsByType,
   filterProjectsBySkill,
-} from "../../utilities/helpers";
+} from "../utilities/helpers";
 
 export default function ProjectsCollage() {
   const [projectFilter, setProjectFilter] = useState({

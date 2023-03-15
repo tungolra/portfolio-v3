@@ -1,0 +1,115 @@
+nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    height: auto;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+  }
+  
+  nav > * {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    list-style-type: none;
+    font-weight: bold;
+    font-size: 35px;
+    padding: 5px 0;
+  }
+  
+  .hamburger-menu:hover {
+    cursor: pointer;
+  }
+  .hamburger-menu {
+    margin-left: 3vmin;
+    position: fixed;
+    z-index: 2;
+  }
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.428);
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  .change {
+    margin-left: 3vmin;
+    position: fixed;
+    z-index: 2;
+  }
+  .change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+  .change .bar2 {
+    opacity: 0;
+  }
+  .change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+  }
+  .change:hover {
+    cursor: pointer;
+  }
+  .home-nav {
+    margin-left: auto;
+  }
+  .home-nav:hover {
+    background-color: rgba(255, 255, 255, 0.209);
+  }
+  .projects-nav {
+    margin: 0 3vmin;
+  }
+  .contact-nav {
+    margin-right: 3vmin;
+  }
+  .skills-nav {
+    margin-right: 3vmin;
+  }
+  
+  .projects-nav:hover,
+  .skills-nav:hover,
+  .logout:hover {
+    background-color: rgba(255, 255, 255, 0.209);
+  }
+  .logout {
+    margin-right: 3vmin;
+  }
+  
+  /* desktop view */
+  @media only screen and (min-width: 961px) {
+  }
+  
+  /* slide-in nav */
+  .overlay {
+    height: 100%;
+    width: 50vmin;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 28px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .overlay a:hover,
+  .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  

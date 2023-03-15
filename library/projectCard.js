@@ -22,7 +22,10 @@ export function projectCard(name, img, repo, site, summary, pages, p) {
               <RxExternalLink />
             </a>
             {site === "[offline]" ? (
-              <span className={styles.project_links}> Site: &lt;Offline&gt;</span>
+              <span className={styles.project_links}>
+                {" "}
+                Site: &lt;Offline&gt;
+              </span>
             ) : (
               <a className={styles.project_links} target="_blank" href={site}>
                 Site
@@ -30,7 +33,10 @@ export function projectCard(name, img, repo, site, summary, pages, p) {
               </a>
             )}
             {pages.length === 0 ? null : (
-              <Link className={styles.carousel__link} href={`/projects/${name}`}>
+              <Link
+                className={styles.carousel__link}
+                href={`/projects/${name}`}
+              >
                 <div className={styles.carousel__link}>Details</div>
               </Link>
             )}

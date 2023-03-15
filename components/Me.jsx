@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 // import "./Home.css";
-import * as seed from "../../seed.js";
+import * as seed from "../seed.js";
 import styles from "@/styles/Home.module.css";
 
 export default function Me() {

@@ -3,10 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "@/styles/Home.module.css";
-import Me from "../components/About/Me";
-import MatrixBackground from "@/components/MatrixBackground/MatrixBackground";
-import Skills from "@/components/Skills/Skills";
-import ProjectsCollage from "@/components/Projects/ProjectsCollage";
+import Me from "../components/Me";
+import MatrixBackground from "@/components/MatrixBackground";
+import Skills from "@/components/Skills";
+import ProjectsCollage from "@/components/ProjectsCollage";
 
 function Header() {
   return (
