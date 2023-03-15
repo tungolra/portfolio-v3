@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Image from "next/image";
-// import "./Home.css";
 import * as seed from "../seed.js";
 import styles from "@/styles/Home.module.css";
 
@@ -17,16 +16,19 @@ export default function Me() {
 
   function aboutMe() {
     return (
-      <div className={styles.about_me}>
+      <div className={styles.aboutMe}>
         <p>
-          I&apos;m a junior full stack web developer whose looking for mentorship in
-          his next role. I have a strong background using the latest tech
-          stacks, specializing in MongoDB, ExpressJS, NodeJS, and ReactJS (MERN)
-          as my preferred tech stack.
-        </p>
-        <p>
-          I continue to develop my own projects to learn more technologies and
-          understand their applications for various business solutions.
+          High-performing Software Developer with a passion for creating
+          innovative and robust web applications. With over 3 years of education
+          in programming in computer science, both through the University of
+          Toronto, completing General Assembly Canada’s Software Engineering
+          certification, and ongoing online certifications, I now specialize in
+          ReactJS and NodeJS with JavaScript as my main programming language. As
+          a former professional within the finance industry with a
+          multidisciplinary education, I am confident in my ability to
+          collaborate with cross-functional teams to solve complex problems that
+          focus on effective solutions for an impactful and meaningful client
+          experience.
         </p>
       </div>
     );
@@ -34,12 +36,12 @@ export default function Me() {
 
   function aboutThisPortfolio() {
     return (
-      <div className={styles.about_me}>
+      <div className={styles.aboutMe}>
         <p>
           This is a React app that demonstrates the use of custom components,
           React hooks, and Redux. Rather than using native components or styling
-          frameworks, I&apos;ve made it a point to use pure CSS, vanilla JS, and HTML
-          to showcase foundational skills.
+          frameworks, I&apos;ve made it a point to use pure CSS, vanilla JS, and
+          HTML to showcase foundational skills.
         </p>
         <p>
           This application is under development to add the following features:
@@ -57,16 +59,16 @@ export default function Me() {
 
   function myEducation() {
     return (
-      <div className={styles.my_education}>
+      <div className={styles.myEducation}>
         {seed.education.map((e) => (
-          <div key={e.img} className={styles.edu_details}>
+          <div key={e.img} className={styles.eduDetails}>
             <div>
-              <img
-                width={100}
-                height={24}
-                className={styles.edu_img}
+              <Image
+                width={50}
+                height={50}
+                className={styles.eduImg}
                 src={e.img}
-                alt="X"
+                alt="education-eblems"
               />
             </div>
             <div>
@@ -87,7 +89,7 @@ export default function Me() {
         {sections.map((s) => (
           <button
             key={s}
-            className={[styles.filter_button, styles.section_select]}
+            className={styles.sectionSelect}
             onClick={() => setContainerDisplay(chooseDisplay(s))}
           >
             {s}
@@ -97,9 +99,9 @@ export default function Me() {
     );
   };
   return (
-    <div className={styles.me_container}>
-      <div className={styles.section_container}>{section()}</div>
-      <div className={styles.container_display}>{containerDisplay}</div>
+    <div className={styles.meContainer}>
+      <div className={styles.sectionContainer}>{section()}</div>
+      <div className={styles.containerDisplay}>{containerDisplay}</div>
     </div>
   );
 }

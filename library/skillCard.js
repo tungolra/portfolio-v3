@@ -18,7 +18,7 @@ export function skillCards(str, obj) {
               <div>
                 <strong>{skill?.skill}</strong>
               </div>
-              <div className={styles.skill_subtype}>#{skill?.subtype}</div>
+              {/* <div className={styles.skill_subtype}>#{skill?.subtype}</div> */}
             </div>
           </div>
         ))}

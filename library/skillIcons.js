@@ -2,9 +2,14 @@ import styles from "@/styles/Skill.module.css";
 
 export function skillIcons(obj) {
   return (
-    <div className="skills-item">
+    <div className={styles.skills_item}>
       {obj.map((skill, idx) => (
-        <img className="tech-icons" src={skill.img} alt={skill.skill} />
+        <img
+          key={idx}
+          className="tech-icons"
+          src={skill.img}
+          alt={skill.skill}
+        />
       ))}
     </div>
   );
