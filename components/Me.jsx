@@ -44,13 +44,13 @@ export default function Me() {
           This portfolio is powered by NextJS where I demonstrate the use of
           custom components, React hooks, Dynamic routing with Next, pure CSS,
           vanilla JS, and HTML to showcase foundational skills in Frontend
-          development. I've chosen NextJS to build this portfolio to leverage
+          development. I&apos;ve chosen NextJS to build this portfolio to leverage
           its server-side rendering for rapid page loads and SEO optimization.
         </p>
         <p>
-          I've created a responsive webpage that uses advanced CSS techniques
+          I&apos;ve created a responsive webpage that uses advanced CSS techniques
           while employing best software architecture and design practices. Under
-          the hood, I've extensively used functional and object-oriented
+          the hood, I&apos;ve extensively used functional and object-oriented
           programming to create dynamically-rendered components that minimizes
           repetitive code.
         </p>

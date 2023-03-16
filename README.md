@@ -2,7 +2,7 @@
 
 ### About the Project
 
-A portfolio website showcasing my tech stack, featured projects, toolings, and working examples of technologies I've used. While this is a NextJS/ReactJS app, I've used React elements only when necessary to demonstrate foundational skills using pure CSS, HTML, and JavaScript. Using a mobile-first approach, I created a responsive website for both desktop and mobile.
+A portfolio website showcasing my tech stack, featured projects, toolings, and working examples of technologies I&apos;ve used. While this is a NextJS/ReactJS app, I&apos;ve used React elements only when necessary to demonstrate foundational skills using pure CSS, HTML, and JavaScript. Using a mobile-first approach, I created a responsive website for both desktop and mobile.
 
 ## Pages
 
