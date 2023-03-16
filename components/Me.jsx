@@ -19,15 +19,19 @@ export default function Me() {
       <div className={styles.aboutMe}>
         <p>
           High-performing Software Developer with a passion for creating
-          innovative and robust web applications. With over 3 years of education
-          in programming in computer science, both through the University of
-          Toronto, completing General Assembly Canada’s Software Engineering
-          certification, and ongoing online certifications, I now specialize in
-          ReactJS and NodeJS with JavaScript as my main programming language. As
-          a former professional within the finance industry with a
-          multidisciplinary education, I am confident in my ability to
-          collaborate within cross-functional teams to solve complex problems
-          that create an impactful and meaningful client experience.
+          innovative and robust web applications. As a former professional
+          within the finance industry and a multidisciplinary degree, I have 5+
+          years of professional experience collaborating within cross-functional
+          teams and 4+ years of rigorous, research-driven, human-centric
+          academic experiences.
+        </p>
+        <p>
+          Took a career break after 2017 to travel overseas and broaden my skill
+          set through post-secondary education, completing General Assembly
+          Canada’s Software Engineering certification, and ongoing online
+          certifications in programming. I excel in fast-paced, mission-driven
+          environments where I can solve complex problems and create supportive
+          networks.
         </p>
       </div>
     );
@@ -37,20 +41,18 @@ export default function Me() {
     return (
       <div className={styles.aboutMe}>
         <p>
-          This is a React app that demonstrates the use of custom components,
-          React hooks, and Redux. Rather than using native components or styling
-          frameworks, I&apos;ve made it a point to use pure CSS, vanilla JS, and
-          HTML to showcase foundational skills.
+          This portfolio is powered by NextJS where I demonstrate the use of
+          custom components, React hooks, Dynamic routing with Next, pure CSS,
+          vanilla JS, and HTML to showcase foundational skills in Frontend
+          development. I've chosen NextJS to build this portfolio to leverage
+          its server-side rendering for rapid page loads and SEO optimization.
         </p>
         <p>
-          This application is under development to add the following features:
-          <ul>
-            <li>
-              CRUD functions to add new Projects and Skills as I continue
-              learning new languages and technologies.
-            </li>
-            <li>Blog Page to document my learning process.</li>
-          </ul>
+          I've created a responsive webpage that uses advanced CSS techniques
+          while employing best software architecture and design practices. Under
+          the hood, I've extensively used functional and object-oriented
+          programming to create dynamically-rendered components that minimizes
+          repetitive code.
         </p>
       </div>
     );
