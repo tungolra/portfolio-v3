@@ -26,8 +26,8 @@ export default function Me() {
           ReactJS and NodeJS with JavaScript as my main programming language. As
           a former professional within the finance industry with a
           multidisciplinary education, I am confident in my ability to
-          collaborate within cross-functional teams to solve complex problems that
-          create an impactful and meaningful client experience.
+          collaborate within cross-functional teams to solve complex problems
+          that create an impactful and meaningful client experience.
         </p>
       </div>
     );
@@ -82,7 +82,7 @@ export default function Me() {
     );
   }
 
-  const section = () => {
+  function section() {
     return (
       <>
         {sections.map((s) => (
@@ -96,11 +96,11 @@ export default function Me() {
         ))}
       </>
     );
-  };
+  }
   return (
     <div className={styles.meContainer}>
       <div className={styles.sectionContainer}>{section()}</div>
-      <div className={styles.containerDisplay}>{containerDisplay}</div>
+      <div className={`${styles.containerDisplay}`}>{containerDisplay}</div>
     </div>
   );
 }
