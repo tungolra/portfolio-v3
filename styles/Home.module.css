@@ -34,14 +34,16 @@
   height: auto;
   width: 100%;
   padding: 5vmin;
-  /* background-color: rgba(0, 0, 0, 0.388); */
   color: white;
+  display: flex;
 }
 
 .aboutDetails {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
+
 .aboutDetails > h4,
 .aboutDetails > img {
   text-align: center;
@@ -51,10 +53,8 @@
   flex-direction: column;
 }
 .profilePic {
-  aspect-ratio: 1/1;
-  object-fit: contain;
   height: 50vmin;
-  width: auto;
+  width: 50vmin;
   border-radius: 100%;
 }
 
@@ -150,7 +150,7 @@
 }
 
 /* footer */
-#footer {
+.footer {
   margin-top: auto;
   background-color: black;
   color: white;
@@ -215,6 +215,8 @@
     flex-direction: row;
   }
   .aboutDetails {
+    text-align: center;
+
     width: 70%;
   }
   .aboutCard {
@@ -261,9 +263,9 @@
     transition: all 0.3s ease;
     height: 45px;
   }
-  /* footer {
+  .footer {
     justify-content: center;
-  } */
+  }
   .contactDetails {
     text-align: center;
   }

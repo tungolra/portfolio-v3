@@ -1,208 +1,181 @@
-.page-container {
-    padding: 5vmin 0;
-    height: auto;
-    background-color: rgba(0, 0, 0, 0.471);
-    color: white;
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  background: linear-gradient(0.25turn, #000000, #929292, #000000);
+}
+
+.pageContainer {
+  padding: 5vmin 0;
+  height: auto;
+  /* background-color: rgba(0, 0, 0, 0.471); */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.projectNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: bold;
+  margin: 0 6vmin;
+}
+
+.projectNav > * {
+  color: white;
+  text-decoration: none;
+}
+
+.projectDetailContainer {
+  padding: 3vmin;
+  /* background-color: rgba(0, 0, 0, 0.689); */
+}
+.projectDetails > h4 {
+  font-size: 25px;
+  margin-bottom: 3vmin;
+}
+
+.projectSummary {
+  margin-bottom: 1vmin;
+  text-align: left;
+  text-indent: 2rem;
+}
+.projectResponsibilities {
+  margin-bottom: 1vmin;
+  text-align: left;
+}
+.projectLinks {
+  text-decoration: none;
+  margin: 0 2vmin;
+  color: #99ff99;
+  font-weight: bold;
+}
+
+.carouselViewport {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.carouselSlide {
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+.carouselSlide:before {
+  transform: translate3d(-50%, -40%, 70px);
+  color: #fff;
+  font-size: 2em;
+}
+.carouselSnapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  scroll-snap-align: center;
+}
+.carouselSnapper > .img {
+  width: 100vmin;
+  aspect-ratio: 16/9;
+  object-fit: contain;
+  height: auto;
+}
+.carouselBtns {
+  margin: 3vmin 0;
+  display: flex;
+  justify-content: space-between;
+}
+.carouselBtns > a {
+  margin: 0 3vmin;
+  color: #99ff99;
+  font-size: 30px;
+}
+
+/* desktop view */
+@media only screen and (min-width: 961px) {
+  .projectDetailContainer {
     display: flex;
-    flex-direction: column;
-    overflow: auto;
+    width: 100%;
+    align-items: center;
     justify-content: center;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
   }
-  .project-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-weight: bold;
-    margin: 0 6vmin;
+  .projectDetails {
+    width: 70%;
+    justify-content: center;
   }
-  
-  .project-nav > * {
-    color: white;
-    text-decoration: none;
+  .carousel {
+    align-items: center;
   }
-  
-  .project-detail-container {
-    padding: 3vmin;
-    background-color: rgba(0, 0, 0, 0.689);
+  .carouselBtns {
+    justify-content: center;
   }
-  .project-details > h4 {
-    font-size: 25px;
-    margin-bottom: 3vmin;
-  }
-  .projects-title {
-    margin: 3vmin 0;
-    font-size: 25px;
-    font-weight: bold;
+  .carouselBtns > h3 {
     color: #99ff99;
+    font-size: 4vmin;
   }
-  .project-summary {
-    margin-bottom: 1vmin;
-    text-align: left;
-    text-indent: 2rem;
-  }
-  .project-responsibilities {
-    margin-bottom: 1vmin;
-    text-align: left;
-  }
-  .project-links {
-    text-decoration: none;
-    margin: 0 2vmin;
-    color: #99ff99;
-    font-weight: bold;
-  }
-  
-  .carousel__viewport {
+
+  .carouselSnapper {
     display: flex;
-    flex-direction: row;
-    overflow-x: scroll;
-    overflow: hidden;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-  }
-  
-  .carousel__slide {
-    position: relative;
-    flex: 0 0 100%;
-    width: 100%;
-  }
-  
-  .carousel__slide:before {
-    transform: translate3d(-50%, -40%, 70px);
-    color: #fff;
-    font-size: 2em;
-  }
-  .carousel__snapper {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    scroll-snap-align: center;
-  }
-  .carousel__snapper > .img {
-    width: 100vmin;
-    aspect-ratio: 16/9;
-    object-fit: contain;
+    align-items: center;
     height: auto;
   }
-  .carousel__btns {
-    margin: 3vmin 0;
-    display: flex;
-    justify-content: space-between;
-  }
-  .carousel__btns > a {
-    margin: 0 3vmin;
-    color: #99ff99;
-    font-size: 30px;
+
+  .carouselBtns > a {
+    margin: 0 25vmin;
   }
   .carousel__link {
-    text-decoration: none;
-    font-style: italic;
+    font-size: 20px;
+  }
+  .projects-summary {
+    width: 70%;
+  }
+  .main-img {
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9px;
+  }
+}
+/* tablet view */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+
+  .projectDetailContainer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .projectDetails {
+    width: 70%;
+    justify-content: center;
+  }
+  .carousel {
+    align-items: center;
+  }
+  .carouselBtns {
+    justify-content: center;
+  }
+  .carouselBtns > h3 {
     color: #99ff99;
+    font-size: 4vmin;
   }
-  /* desktop view */
-  @media only screen and (min-width: 961px) {
-    .projects-summary {
-      max-width: 50vmin;
-    }
-    .project-detail-container {
-      display: flex;
-      width: 100%;
-      align-items: center;
-      justify-content: center;
-    }
-    .project-details {
-      width: 70%;
-      justify-content: center;
-    }
-    .carousel {
-      align-items: center;
-    }
-    .carousel__btns {
-      justify-content: center;
-    }
-    .carousel__btns > h3 {
-      color: #99ff99;
-      font-size: 4vmin;
-    }
-  
-    .carousel__snapper {
-      display: flex;
-      align-items: center;
-      height: auto;
-    }
-    .img-container > .main-img {
-      width: auto;
-      height: 70vmin;
-    }
-    .carousel__btns > a {
-      margin: 0 25vmin;
-    }
-    .carousel__link {
-      font-size: 20px;
-    }
-    .projects-summary {
-      width: 70%;
-    }
-    .main-img {
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 9px;
-    }
+
+  .carouselSnapper {
+    display: flex;
+    align-items: center;
+    height: auto;
   }
-  /* tablet view */
-  @media only screen and (min-width: 401px) and (max-width: 960px) {
-    .projects-summary {
-      max-width: 50vmin;
-    }
-    .project-detail-container {
-      display: flex;
-      width: 100%;
-      align-items: center;
-      justify-content: center;
-    }
-    .project-details {
-      width: 70%;
-      justify-content: center;
-    }
-    .carousel {
-      align-items: center;
-    }
-    .carousel__btns {
-      justify-content: center;
-    }
-    .carousel__btns > h3 {
-      color: #99ff99;
-      font-size: 4vmin;
-    }
-  
-    .carousel__snapper {
-      display: flex;
-      align-items: center;
-      height: auto;
-    }
-    .img-container > .main-img {
-      width: auto;
-      height: 70vmin;
-    }
-    .carousel__btns > a {
-      margin: 0 25vmin;
-    }
-    .carousel__link {
-      font-size: 20px;
-    }
-    .projects-summary {
-      width: 70%;
-    }
-    .main-img {
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 9px;
-    }
+
+  .carouselBtns > a {
+    margin: 0 25vmin;
   }
-  
-  
+}

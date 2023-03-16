@@ -26,9 +26,8 @@ export default function Me() {
           ReactJS and NodeJS with JavaScript as my main programming language. As
           a former professional within the finance industry with a
           multidisciplinary education, I am confident in my ability to
-          collaborate with cross-functional teams to solve complex problems that
-          focus on effective solutions for an impactful and meaningful client
-          experience.
+          collaborate within cross-functional teams to solve complex problems that
+          create an impactful and meaningful client experience.
         </p>
       </div>
     );

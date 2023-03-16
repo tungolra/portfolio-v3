@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import * as seed from "../seed";
+import * as seed from "@/seed";
 import styles from "@/styles/ProjectsCollage.module.css";
 import {
   allProjects,
@@ -81,7 +81,7 @@ export default function ProjectsCollage() {
   };
 
   return (
-    <div id={styles.projects} className={styles.projectsPage}>
+    <div id="projects" className={styles.projectsPage}>
       <h4>What I&apos;ve Worked On</h4>
       {/* <h5>Filter By:</h5> */}
       <div className={styles.filterContainer}>

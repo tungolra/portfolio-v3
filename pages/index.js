@@ -7,7 +7,6 @@ import NavBar from "@/components/NavBar";
 
 export default function Home() {
 
-  const router = useRouter();
   return (
     <div className="app-container">
       <div className="App">

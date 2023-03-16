@@ -10,7 +10,7 @@ export function projectCard(name, img, repo, site, summary, pages, p) {
         <div className={styles.cardFront}>
           <div className={styles.cardFrontDetails}>
             <h4>{name}</h4>
-            {/* {techIcons(p)} */}
+            {techIcons(p)}
           </div>
         </div>
         <div className={styles.cardBack}>
@@ -34,10 +34,10 @@ export function projectCard(name, img, repo, site, summary, pages, p) {
             )}
             {pages.length === 0 ? null : (
               <Link
-                className={styles.carouselLink}
+                className={styles.projectLinks}
                 href={`/projects/${name}`}
               >
-                <div className={styles.carouselLink}>Details</div>
+                <div className={styles.projectLinks}>Details</div>
               </Link>
             )}
           </div>

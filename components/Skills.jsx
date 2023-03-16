@@ -5,7 +5,7 @@ import { skillCards } from "../library/skillCard";
 
 export default function Skills() {
   return (
-    <div className={styles.skills_container}>
+    <div id="skills" className={styles.skills_container}>
       <h3 id={styles.skills}>My Tech Stack</h3>
       <div className={styles.skill_sections}>
         {skillCards("Languages", seed.languages)}

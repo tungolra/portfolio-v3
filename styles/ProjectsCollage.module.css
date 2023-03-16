@@ -103,19 +103,6 @@
   color: #99ff99;
 }
 
-.cardFront > .cardFrontDetails > .skillsItem {
-  aspect-ratio: 1/1;
-  border-radius: 100%;
-  object-fit: contain;
-  width: 100%;
-}
-.cardFront > .cardFrontDetails > .skillsItem > img {
-  aspect-ratio: 1/1;
-  border-radius: 100%;
-  border: 1px solid white;
-  margin: 1vmin;
-}
-
 .cardBack {
   color: white;
   position: relative;
@@ -132,14 +119,18 @@
   margin: 1vmin;
   font-size: 0.8em;
 }
-.techIcons {
-  height: 50px;
-  aspect-ratio: 1/1;
-  object-fit: contain;
-}
 
 .cardLinks {
   justify-content: space-around;
+  font-style: italic;
+  color: #99ff99;
+}
+.projectLinks { 
+  text-decoration: none;
+  margin: 0 2vmin;
+  color: #99ff99;
+  font-weight: bold;
+  
 }
 
 @media only screen and (min-width: 961px) {

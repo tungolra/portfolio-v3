@@ -7,6 +7,7 @@ import ProjectsCollage from "@/components/ProjectsCollage";
 
 import React from "react";
 import Footer from "./Footer";
+import { BiBorderRadius } from "react-icons/bi";
 
 function Header() {
   return (
@@ -31,12 +32,11 @@ function About() {
             className={styles.profilePic}
             width={100}
             height={100}
-            priority
             style={{
-              // aspectRatio: "1/1",
-              objectFit: "contain",
+              aspectRatio: "1/1",
+              objectFit: "cover",
               height: "50vmin",
-              width: "auto",
+              objectPosition: "top",
             }}
           />
         </div>
@@ -57,10 +57,9 @@ export default function Welcome() {
         <Header />
         <About />
         <Skills />
-        <ProjectsCollage/>
-
+        <ProjectsCollage />
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }
