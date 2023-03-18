@@ -4,10 +4,8 @@ import Me from "../components/Me";
 import MatrixBackground from "@/components/MatrixBackground";
 import Skills from "@/components/Skills";
 import ProjectsCollage from "@/components/ProjectsCollage";
-
 import React from "react";
 import Footer from "./Footer";
-import { BiBorderRadius } from "react-icons/bi";
 
 function Header() {
   return (
@@ -35,7 +33,6 @@ function About() {
             style={{
               aspectRatio: "1/1",
               objectFit: "cover",
-              height: "50vmin",
               objectPosition: "top",
             }}
           />

@@ -58,8 +58,8 @@
   flex-direction: column;
 }
 .profilePic {
-  height: 50vmin;
-  width: 50vmin;
+  height: 35vmin;
+  width: 35vmin;
   border-radius: 100%;
 }
 
