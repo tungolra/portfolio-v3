@@ -1,4 +1,7 @@
 import { useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Button = ({ onClick, children }) => {
   return (
@@ -196,6 +199,43 @@ const projects = [
 const featured = projects.filter((project) => project.type === "project");
 const preview = projects.filter((project) => project.type === "preview");
 
+function SimpleSlider({ project }) {
+  var settings = {
+    dots: true,
+    fade: true,
+    infinite: true,
+    speed: 1000,
+    autoplay: true,
+    autoplaySpeed: 7000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+  };
+  return (
+    <div className="container mx-auto max-w-2xl lg:max-w-4xl lg:py-20">
+      <h3 className="mb-2 text-2xl font-medium">{project.name}</h3>
+      <Slider {...settings}>
+        <div>
+          <p className="mb-6 text-lg text-gray-600">{project.summary}</p>
+          <div className="mb-4">
+            {project.skills.map((skill) => (
+              <Badge key={skill}>{skill}</Badge>
+            ))}
+          </div>
+        </div>
+        <div>
+          <h3 className="mb-2 text-2xl font-medium">Responsibilities</h3>
+          <ul className="mb-6 text-lg text-gray-600">
+            {project.responsibilities.map((responsibility, idx) => (
+              <li key={idx}>{responsibility}</li>
+            ))}
+          </ul>
+        </div>
+      </Slider>
+    </div>
+  );
+}
+
 export default function Projects() {
   const [page, setPage] = useState(featured);
 
@@ -248,18 +288,9 @@ export default function Projects() {
                 View Code
               </Button>
             </div>
-            {/* <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent to-black" /> */}
           </div>
           <div className="flex flex-col justify-between lg:col-span-1">
-            <div>
-              <h3 className="mb-2 text-2xl font-medium">{project.name}</h3>
-              <p className="mb-6 text-lg text-gray-600">{project.summary}</p>
-              <div className="mb-4">
-                {project.skills.map((skill) => (
-                  <Badge key={skill}>{skill}</Badge>
-                ))}
-              </div>
-            </div>
+            <SimpleSlider project={project} />
             <div className="flex justify-between">
               <Button
                 href={project.site}
@@ -269,13 +300,7 @@ export default function Projects() {
               >
                 Visit Site
               </Button>
-              <Button
-                href={project.repo}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Details
-              </Button>
+
               <Button
                 href={project.repo}
                 target="_blank"
@@ -290,7 +315,7 @@ export default function Projects() {
     ));
 
   return (
-    <div className="py-20 text-center">
+    <div id="projects" className="py-20 text-center">
       <div className="mb-8 ">
         <h2 className="mb-4 text-4xl font-bold">Featured Projects</h2>
         <div className="flex items-center justify-center">
