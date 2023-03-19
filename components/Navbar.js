@@ -19,8 +19,9 @@ export default function Navbar() {
   };
 
   return (
-    <div>
-      <header className="absolute inset-x-0 top-0 z-50">
+    <div container>
+
+        
         <nav
           className="flex items-center justify-between p-6 lg:px-8"
           aria-label="Global"
@@ -35,6 +36,7 @@ export default function Navbar() {
               />
             </a>
           </div>
+          {/* Mobile menu button */}
           <div className="flex lg:hidden">
             <button
               type="button"
@@ -45,6 +47,7 @@ export default function Navbar() {
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
+          {/* Desktop menu */}
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
               <a
@@ -61,10 +64,11 @@ export default function Navbar() {
               href="#"
               className="text-sm font-semibold leading-6 text-gray-900"
             >
-              Connect with me! <span aria-hidden="true">&darr;</span>
+              Download CV <span aria-hidden="true"></span>
             </a>
           </div>
         </nav>
+        {/* Mobile menu */}
         <Dialog
           as="div"
           className="lg:hidden"
@@ -116,7 +120,7 @@ export default function Navbar() {
             </div>
           </Dialog.Panel>
         </Dialog>
-      </header>
+
     </div>
   );
 }

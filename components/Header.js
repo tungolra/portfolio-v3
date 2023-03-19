@@ -1,29 +1,32 @@
 import { useState } from "react";
 import Image from "next/image";
 
-export default function About() {
+export default function Header() {
   return (
-    <div>
-      <div className="relative isolate px-6 pt-14 lg:px-8">
-        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-          <div className="text-center">
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Image
-                src="/profile-picture.jpg"
-                alt="profile-picture"
-                width={100}
-                height={100}
-              />
-            </div>
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              Ralph Tu&#241;gol
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Full-Stack Software Developer
-            </p>
-          </div>
+    <header className="flex h-screen flex-col md:max-w-full md:flex-row">
+      <div className="flex flex-col justify-center bg-gray-500 p-10 text-center text-white md:w-1/2">
+        <h2>Ralph Tu&#241;gol</h2>
+        <p>Full-Stack Software Developer</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi,
+          sapiente distinctio nisi modi vero officia nulla impedit voluptas
+          soluta alias quia rem culpa laboriosam iusto? Nihil temporibus
+          deserunt perferendis iusto!
+        </p>
+        <div>
+          <button className="rounded-full border px-4 py-1 text-sm font-semibold hover:border-transparent hover:bg-purple-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">
+            Get in touch!
+          </button>
         </div>
       </div>
-    </div>
+      <div className="flex items-end justify-end bg-black md:w-1/2">
+        <Image
+          src="/profile-picture-nobgd.png"
+          alt="profile-picture"
+          width={350}
+          height={350}
+        />
+      </div>
+    </header>
   );
 }
