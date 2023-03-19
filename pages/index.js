@@ -1,15 +1,19 @@
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import Welcome from "@/components/Welcome";
-import NavBar from "@/components/NavBar";
+import Navbar from "@/components/Navbar";
+import Projects from "@/components/Projects";
+import Testimonials from "@/components/Testimonials";
+import Contact from "@/components/Contact";
+import About from "@/components/Header";
+import Services from "@/components/Services";
+
+import { useEffect, useRef } from "react";
+
 
 export default function Home() {
-
+  
   return (
-    <div className="app-container">
-      <div className="App">
+      <div className="bg-white">
         {/* routes: cv, projects  */}
         <Head>
           <title>Ralph Tungol Portfolio</title>
@@ -17,9 +21,12 @@ export default function Home() {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <NavBar />
-        <Welcome />
+        <About/>
+        <Navbar/>
+        <Services/>
+        <Projects/>
+        <Testimonials/>
+        <Contact/> 
       </div>
-    </div>
   );
 }

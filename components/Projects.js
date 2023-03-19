@@ -1,174 +1,25 @@
-let tool = "https://i.imgur.com/LFuPbmG.png";
-let lab = "https://i.imgur.com/VP2HfTC.png";
-let stock = "https://i.imgur.com/5gKzj9A.png";
+import { useState } from "react";
 
-export const skills = [
-  {
-    type: "Languages",
-    subtype: "Markup Language",
-    skill: "HTML5",
-    img: "https://i.imgur.com/xMMSqAc.png",
-  },
-  {
-    type: "Languages",
-    subtype: "Programming Language",
-    skill: "Typescript",
-    img: "https://i.imgur.com/HPlbDDQ.png",
-  },
-  {
-    type: "Languages",
-    subtype: "Programming Language",
-    skill: "Java",
-    img: "https://i.imgur.com/YJjKbt4.png",
-  },
-  {
-    type: "Languages",
-    subtype: "Styling Language",
-    skill: "CSS3",
-    img: "https://i.imgur.com/jTNhsgg.png",
-  },
-  {
-    type: "Languages",
-    subtype: "Styling Framework",
-    skill: "Tailwind",
-    img: "https://i.imgur.com/0Q0d39h.png",
-  },
-  {
-    type: "Languages",
-    subtype: "Styling Language",
-    skill: "SCSS",
-    img: "https://i.imgur.com/jkKieiK.png",
-  },
-  {
-    type: "Technologies",
-    subtype: "Styling Framework",
-    skill: "Materialize",
-    img: "https://i.imgur.com/kLtV7aP.png",
-  },
-  {
-    type: "Technologies",
-    subtype: "Styling Framework",
-    skill: "Material UI",
-    img: "https://i.imgur.com/nQneTU6.png",
-  },
-  {
-    type: "Technologies",
-    subtype: "Styling Language",
-    skill: "Bootstrap",
-    img: "https://i.imgur.com/NsKingN.png",
-  },
-  {
-    type: "Technologies",
-    subtype: "Framework",
-    skill: "Angular",
-    img: "https://i.imgur.com/yldqsTl.jpg",
-  },
-  {
-    type: "Technologies",
-    subtype: "Framework",
-    skill: "SpringBoot",
-    img: "https://i.imgur.com/fozEzEY.png",
-  },
-  {
-    type: "Technologies",
-    subtype: "Framework",
-    skill: "jQuery",
-    img: "https://i.imgur.com/dltSXkL.png",
-  },
-  {
-    type: "Technologies",
-    subtype: "Framework",
-    skill: "React",
-    img: "https://i.imgur.com/I9A7c4b.png",
-  },
-  {
-    type: "Technologies",
-    subtype: "Framework",
-    skill: "Redux",
-    img: "https://i.imgur.com/B5jiJo7.png",
-  },
-  {
-    type: "Technologies",
-    subtype: "Framework",
-    skill: "Node.js",
-    img: "https://i.imgur.com/SqYTp68.png",
-  },
-  {
-    type: "Languages",
-    subtype: "Programming Language",
-    skill: "Javascript",
-    img: "https://i.imgur.com/ckfbsq5.png",
-  },
-  {
-    type: "Languages",
-    subtype: "Programming Language",
-    skill: "SQL",
-    img: "https://i.imgur.com/7ImtZip.png",
-  },
-  {
-    type: "Technologies",
-    subtype: "Database",
-    skill: "MongoDB",
-    img: "https://i.imgur.com/a0RoQoD.png",
-  },
-  {
-    type: "Technologies",
-    subtype: "Library",
-    skill: "Mongoose",
-    img: "https://i.imgur.com/BPb25o6.png",
-  },
-  {
-    type: "Technologies",
-    subtype: "Database",
-    skill: "PostgreSQL",
-    img: "https://i.imgur.com/kqTfCNX.png",
-  },
-  {
-    type: "Technologies",
-    subtype: "Cloud Platform",
-    skill: "Heroku",
-    img: "https://i.imgur.com/TQ5qUGp.png",
-  },
-  {
-    type: "Technologies",
-    subtype: "Version Control Software",
-    skill: "Git",
-    img: "https://i.imgur.com/P6KIeEm.png",
-  },
-  {
-    type: "Technologies",
-    subtype: "Database",
-    skill: "AWS S3",
-    img: "https://i.imgur.com/n3fTnNv.png",
-  },
-  {
-    type: "Technologies",
-    subtype: "Framework",
-    skill: "Django",
-    img: "https://i.imgur.com/CTDcDh6.png",
-  },
-  {
-    type: "Languages",
-    subtype: "Programming Language",
-    skill: "Python",
-    img: "https://i.imgur.com/ofIVvdH.png",
-  },
-  {
-    type: "Technologies",
-    subtype: "Framework",
-    skill: "Express",
-    img: "https://i.imgur.com/awaqvUm.png",
-  },
-  {
-    type: "Technologies",
-    subtype: "Library",
-    skill: "Socket.io",
-    img: "https://i.imgur.com/oCCYHpS.png",
-  },
-];
+const Button = ({ onClick, children }) => {
+  return (
+    <button
+      onClick={onClick}
+      className="rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50"
+    >
+      {children}
+    </button>
+  );
+};
 
+const Badge = ({ children }) => {
+  return (
+    <span className="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800">
+      {children}
+    </span>
+  );
+};
 
-export const projects = [
+const projects = [
   {
     name: "E-Commerce Store",
     img: "https://i.imgur.com/o0iFlPj.png",
@@ -228,7 +79,11 @@ export const projects = [
   {
     name: "Wealthy-Mi",
     img: "https://i.imgur.com/SWCYvDG.gif",
-    pages: ["https://i.imgur.com/SWCYvDG.gif"],
+    pages: [
+      "https://i.imgur.com/SWCYvDG.gif",
+      "https://i.imgur.com/SWCYvDG.gif",
+      "https://i.imgur.com/SWCYvDG.gif",
+    ],
     summary:
       "Wealthy Mi is a personal finance application created as development exercise for using a modern MERN-stack (MongoDB, ExpressJS, React, NodeJS) and implementing Agile workflow practices. Users can manage their assets and expenses, create financial goals, and forecast when they can achieve them through their dashboard with our data visualization tools.",
     responsibilities: [
@@ -335,38 +190,122 @@ export const projects = [
     type: "project",
   },
 ];
+const featured = projects.filter((project) => project.type === "project");
+const preview = projects.filter((project) => project.type === "preview");
 
+export default function Projects() {
+  const [page, setPage] = useState(featured);
 
+  const toggleShowFeatured = () => {
+    setPage(!page);
+  };
 
-export const education = [
-  {
-    school: "University of Toronto",
-    subj: "Anthropology",
-    date: "Apr 2023",
-    img: "https://i.imgur.com/gr5FNay.png",
-  },
-  {
-    school: "SkillUp by Simplilearn",
-    subj: "Getting started with DevOps",
-    date: "Dec 2022",
-    img: "https://i.imgur.com/WMHr9HP.jpg",
-  },
-  {
-    school: "General Assembly",
-    subj: "Software Engineering Immersive",
-    date: "Dec 2022",
-    img: "https://i.imgur.com/BGc1dXK.png",
-  },
-  {
-    school: "Investment Funds Institute of Canada",
-    subj: "Canadian Investment Funds Operations",
-    date: "Mar 2014",
-    img: "https://i.imgur.com/gAHjwfc.png",
-  },
-  {
-    school: "Sheridan College",
-    subj: "Exercise Science",
-    date: "Apr 2013",
-    img: "https://i.imgur.com/V0hxU8s.png",
-  },
-];
+  const renderProjects = (projectList) =>
+    projectList.map((project, index) => (
+      <div key={project.name} className="mb-8 p-10 lg:mb-12">
+        <div className="grid gap-x-8 lg:grid-cols-2 xl:gap-x-12">
+          <div className="relative flex flex-col items-center justify-center lg:col-span-1">
+            <img
+              src={project.img}
+              alt={project.name}
+              className="h-auto max-w-full"
+            />
+            <div className="mt-4 grid grid-cols-2 gap-x-4">
+              {project.pages.slice(0, 2).map((page) => (
+                <div
+                  key={page}
+                  className="relative flex flex-col items-center justify-center"
+                >
+                  <img
+                    src={page}
+                    alt={project.name}
+                    className="h-auto max-w-full"
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="absolute z-10 hidden h-full w-full items-center justify-center bg-black bg-opacity-70">
+              <Button
+                href={project.site}
+                isDisabled={project.site === "[offline]"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit Site
+              </Button>
+              <Button
+                href={project.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Code
+              </Button>
+            </div>
+            <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent to-black" />
+          </div>
+          <div className="flex flex-col justify-between lg:col-span-1">
+            <div>
+              <h3 className="mb-2 text-2xl font-medium">{project.name}</h3>
+              <p className="mb-6 text-lg text-gray-600">{project.summary}</p>
+              <div className="mb-4">
+                {project.skills.map((skill) => (
+                  <Badge key={skill}>{skill}</Badge>
+                ))}
+              </div>
+            </div>
+            <div className="flex justify-between">
+              <Button
+                href={project.site}
+                isDisabled={project.site === "[offline]"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit Site
+              </Button>
+              <Button
+                href={project.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Details
+              </Button>
+              <Button
+                href={project.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Code
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    ));
+
+  return (
+    <div className="py-20 text-center">
+      <div className="mb-8 ">
+        <h2 className="mb-4 text-4xl font-bold">Featured Projects</h2>
+        <div className="flex items-center justify-center">
+          <button
+            className={`mr-4 font-medium hover:text-gray-700 ${
+              page ? "text-gray-700" : "text-gray-400"
+            }`}
+            onClick={toggleShowFeatured}
+          >
+            Featured
+          </button>
+          <button
+            className={`font-medium hover:text-gray-700 ${
+              !page ? "text-gray-700" : "text-gray-400"
+            }`}
+            onClick={toggleShowFeatured}
+          >
+            Preview
+          </button>
+        </div>
+      </div>
+      {page ? renderProjects(featured) : renderProjects(preview)}
+    </div>
+  );
+}
