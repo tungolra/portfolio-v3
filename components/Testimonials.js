@@ -6,24 +6,18 @@ import { useEffect, useState } from "react";
 
 const recommendations = [
   {
-    name: "John Smith",
-    title: "CEO",
-    company: "ABC Inc.",
-    quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Justin Chapman",
+    title: "Software Engineering Instructional Associate",
+    company: "General Assembly Canada",
+    quote:
+      "His ability to work well under pressure and manage his time effectively enabled him to complete projects on time and to a high standard. He collaborated well with his teammates, making sure that he took the time to assist and support whenever possible. His strong work ethic and self-motivation, coupled with his communication skills and collaborative efforts, would make Ralph an excellent addition to any team.",
   },
   {
-    name: "Jane Doe",
-    title: "CTO",
-    company: "XYZ Corp.",
+    name: "Martin Nicola",
+    title: "Associate Instructor",
+    company: "General Assembly Canada",
     quote:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-  },
-  {
-    name: "David Lee",
-    title: "COO",
-    company: "123 Co.",
-    quote:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.",
+      "As his co-instructor, I can speak with conviction and say Ralph was consistently among the top students in his class and one of the hardest working students that I’ve ever come across. \n Among his attributes, he has strong attention to detail, Ralph is able to work well with others and his analytical skills and productivity are far beyond expectation. Do not pass up on this outstanding candidate!",
   },
 ];
 
@@ -40,7 +34,7 @@ function SimpleSlider() {
 
   var settings = {
     dots: true,
-    fade: true ,
+    fade: true,
     infinite: true,
     speed: 1000,
     autoplay: true,
@@ -53,7 +47,7 @@ function SimpleSlider() {
     },
   };
   return (
-    <div className="mx-auto max-w-2xl lg:max-w-4xl lg:py-20">
+    <div className="container mx-auto max-w-2xl lg:max-w-4xl lg:py-20">
       <Slider {...settings}>
         {recommendations.map((recommendation) => (
           <figure className="mt-10" key={recommendation.name}>
@@ -72,14 +66,14 @@ function SimpleSlider() {
           </figure>
         ))}
       </Slider>
-      <div className="mt-4 text-center p-5">Next slide in {countdown}s</div>
+      <div className="mt-4 p-5 text-center">Next slide in {countdown}s</div>
     </div>
   );
 }
 
 export default function Testimonials() {
   return (
-    <section className="flex justify-center">
+    <section id="recommendations" className="flex justify-center">
       <SimpleSlider />
     </section>
   );

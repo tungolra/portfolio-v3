@@ -46,7 +46,7 @@ export default function ContactForm() {
   // const isFormValid =
   //   name && subject && email && message && email.includes("@");
   return (
-    <div>
+    <div id="contact">
       <h1 className="mb-10 text-center text-4xl font-bold">Contact</h1>
       <div className="flex min-h-screen items-center justify-center bg-gray-100">
         <div class="flex flex-col md:flex-row">
