@@ -1,11 +1,11 @@
-import styles from "@/styles/ProjectDetailPage.module.css";
+// import styles from "@/styles/ProjectDetailPage.module.css";
 import React from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { featured } from "@/seed";
-import Footer from "@/components/Footer";
-import { carousel } from "@/library/carouselSection";
-import { projectDetails } from "@/library/projectDetailsSection";
+// import Footer from "@/components/Footer";
+// import { carousel } from "@/library/carouselSection";
+// import { projectDetails } from "@/library/projectDetailsSection";
 import NavBar from "@/components/NavBar";
 
 export default function ProjectDetailsPage() {
