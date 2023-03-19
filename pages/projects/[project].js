@@ -45,7 +45,7 @@ export default function ProjectDetailsPage() {
           {projectDetails(selectedProject)}
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
