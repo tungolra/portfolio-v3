@@ -6,7 +6,7 @@ import { featured } from "@/seed";
 // import Footer from "@/components/Footer";
 // import { carousel } from "@/library/carouselSection";
 // import { projectDetails } from "@/library/projectDetailsSection";
-import NavBar from "@/components/NavBar";
+// import NavBar from "@/components/NavBar";
 
 export default function ProjectDetailsPage() {
   // console.log(window)
@@ -19,7 +19,8 @@ export default function ProjectDetailsPage() {
 
   return (
     <div className={styles.homeContainer}>
-    <NavBar/>
+    <h1>projectdetails</h1>
+    {/* <NavBar/>
       <div className={styles.pageContainer}>
         <div className={styles.projectNav}>
           {navProject === 0 ? (
@@ -45,7 +46,7 @@ export default function ProjectDetailsPage() {
           {projectDetails(selectedProject)}
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer /> */}
     </div>
   );
 }

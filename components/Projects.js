@@ -176,7 +176,10 @@ const projects = [
   {
     name: "Othello",
     img: "https://i.imgur.com/FEbqK0L.gif",
-    pages: ["https://i.imgur.com/FEbqK0L.gif"],
+    pages: [
+      "https://i.imgur.com/FEbqK0L.gif",
+      "https://i.imgur.com/FEbqK0L.gif",
+    ],
     summary:
       "Othello, AKA Reversi, is a multiplayer, strategy board game where players aim to have the most pieces on the board before it is filled. My app features a random-bot that single-player users can play against. Developed using Vanilla JavaScript, this independent project showcases DOM manipulation, functional programming, modularization, and complex game logic. Utilized HTML and pure CSS to style a modern-classic UI/UX.",
     responsibilities: [
@@ -202,15 +205,19 @@ export default function Projects() {
 
   const renderProjects = (projectList) =>
     projectList.map((project, index) => (
-      <div key={project.name} className="mb-8 p-10 lg:mb-12">
+      <div key={project.name} className="mb-8 p-2 lg:mb-12 lg:p-10">
         <div className="grid gap-x-8 lg:grid-cols-2 xl:gap-x-12">
-          <div className="relative flex flex-col items-center justify-center lg:col-span-1">
+          <div
+            className={`relative flex flex-col items-center justify-center lg:col-span-1 ${
+              index % 2 == 0 ? "" : "lg:order-last"
+            }`}
+          >
             <img
               src={project.img}
               alt={project.name}
-              className="h-auto max-w-full"
+              className="aspect-video h-auto max-w-full border-2 border-black object-contain "
             />
-            <div className="mt-4 grid grid-cols-2 gap-x-4">
+            <div className="mt-2 grid grid-cols-2 gap-x-2">
               {project.pages.slice(0, 2).map((page) => (
                 <div
                   key={page}
@@ -219,7 +226,7 @@ export default function Projects() {
                   <img
                     src={page}
                     alt={project.name}
-                    className="h-auto max-w-full"
+                    className="aspect-[2/1] h-auto max-w-full border-2 border-black bg-black object-contain"
                   />
                 </div>
               ))}
@@ -241,7 +248,7 @@ export default function Projects() {
                 View Code
               </Button>
             </div>
-            <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent to-black" />
+            {/* <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent to-black" /> */}
           </div>
           <div className="flex flex-col justify-between lg:col-span-1">
             <div>
