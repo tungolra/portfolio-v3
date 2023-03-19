@@ -9,7 +9,7 @@ import { featured } from "@/seed";
 // import NavBar from "@/components/NavBar";
 
 export default function ProjectDetailsPage() {
-  // console.log(window)
+
   const router = useRouter();
   const project = router.query.project;
   const selectedProject = featured.find((p) => p?.name === project);
@@ -18,7 +18,7 @@ export default function ProjectDetailsPage() {
   const prevProject = featured[navProject - 1]?.name;
 
   return (
-    <div className={styles.homeContainer}>
+    <div>
     <h1>projectdetails</h1>
     {/* <NavBar/>
       <div className={styles.pageContainer}>

@@ -6,8 +6,7 @@ import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import About from "@/components/Header";
 import Services from "@/components/Services";
-
-import { useEffect, useRef } from "react";
+import TechStack from "@/components/TechStack";
 
 
 export default function Home() {
@@ -24,6 +23,7 @@ export default function Home() {
         <About/>
         <Navbar/>
         <Services/>
+        <TechStack/>
         <Projects/>
         <Testimonials/>
         <Contact/> 
