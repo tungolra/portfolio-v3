@@ -204,18 +204,16 @@ function SimpleSlider({ project }) {
     <div className="container mx-auto max-w-2xl lg:max-w-4xl lg:py-20 ">
       <Slider {...settings}>
         <div>
-          <h3 className="mb-2 text-2xl font-bold">About This Project</h3>
-          <p className="mb-6 text-lg text-gray-600 ">{project.summary}</p>
+          <h3 className="mb-2 text-2xl font-bold uppercase tracking-widest">About This Project</h3>
+          <p className="mb-6 text-lg text-gray-600 text-justify">{project.summary}</p>
           <div className="mb-4">
             {project.skills.map((skill) => (
-              <Badge key={skill} >
-                {skill}
-              </Badge>
+              <Badge key={skill}>{skill}</Badge>
             ))}
           </div>
         </div>
         <div>
-          <h3 className="mb-2 text-2xl font-bold">Responsibilities</h3>
+          <h3 className="mb-2 text-2xl font-bold uppercase tracking-widest">Responsibilities</h3>
           <ul className="mb-6 text-lg text-gray-600">
             {project.responsibilities.map((responsibility, idx) => (
               <li
@@ -241,14 +239,14 @@ const renderProjects = (projectList) =>
       className="mb-8 rounded-3xl bg-slate-50/50 p-2 md:mx-4 md:p-4  "
     >
       <div className="grid grid-cols-1 gap-x-8 lg:grid-cols-2 xl:gap-x-12">
-        <h3 className="mb-2 font-sans text-2xl font-bold tracking-widest ">
-          {project.name}
-        </h3>
         <div
           className={`relative flex flex-col items-center justify-center lg:col-span-1 ${
             index % 2 == 0 ? "" : "lg:order-last"
           }`}
         >
+          <h3 className="mb-2 font-sans text-2xl font-bold tracking-widest uppercase ">
+            {project.name}
+          </h3>
           <img
             src={project.img}
             alt={project.name}
@@ -328,8 +326,8 @@ export default function Projects() {
         <h2 className="mb-4 text-4xl font-bold">Featured Projects</h2>
         <div className="flex items-center justify-center">
           <button
-            className={`mr-4 font-medium hover:text-gray-700 ${
-              page ? "text-gray-700" : "text-gray-400"
+            className={`mr-4 font-medium hover:text-blue-700 ${
+              page ? "font-bold text-blue-500" : "text-gray-700"
             }`}
             onClick={toggleShowFeatured}
           >

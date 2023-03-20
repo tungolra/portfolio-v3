@@ -14,7 +14,6 @@ function SimpleSlider() {
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // centerMode: true,
     className: "align-middle",
     arrows: false,
   };
@@ -73,13 +72,28 @@ export default function Header() {
         <div className="mt-5 rounded-3xl bg-slate-50/50">
           <span className=" font-bold ">Let&apos;s Connect!</span>
           <div className="flex justify-center p-3 ">
-            <Link href="" className="mx-3">
+            <Link
+              href="https://www.linkedin.com/in/ralph-tungol/"
+              target="_blank"
+              className="mx-3"
+              rel="noopener noreferrer"
+            >
               <Image src={LinkedInIcon} width={50} />
             </Link>
-            <Link href="" className="mx-3">
+            <Link
+              href="mailto:rarttungol@gmail.com"
+              target="_blank"
+              className="mx-3"
+              rel="noopener noreferrer"
+            >
               <Image src={EmailIcon} width={50} />
             </Link>
-            <Link href="" className="mx-3">
+            <Link
+              href="https://github.com/tungolra"
+              target="_blank"
+              className="mx-3"
+              rel="noopener noreferrer"
+            >
               <Image src={GitHubIcon} width={50} />
             </Link>
           </div>

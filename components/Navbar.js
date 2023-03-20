@@ -17,7 +17,7 @@ export default function Navbar() {
   return (
     <div className="sticky top-0 z-10 bg-white">
       <nav
-        className="flex items-center justify-between p-3 lg:px-8 "
+        className="flex items-center justify-between p-3 lg:px-8 bg-gradient-to-r from-green-400 to-blue-500 drop-shadow-2xl "
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
@@ -30,7 +30,7 @@ export default function Navbar() {
             />
           </a>
         </div>
-        {/* Mobile menu button */}
+
         <div className="flex lg:hidden ">
           <button
             type="button"
@@ -41,7 +41,7 @@ export default function Navbar() {
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        {/* Mobile menu */}
+
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
             <Link
