@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-scroll";
+import { Link as NextLink } from "next/link";
 
 const navigation = [
   { name: "Services", id: "services" },
@@ -10,28 +11,17 @@ const navigation = [
   { name: "Testimonials", id: "recommendations" },
   { name: "Contact", id: "contact" },
 ];
-
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [active, setActive] = useState(null);
 
   return (
-    <div className="sticky top-0 z-10 bg-white">
+    <div className="sticky top-0 z-10">
       <nav
-        className="flex items-center justify-between p-3 lg:px-8 "
+        className="flex items-center justify-between bg-gradient-to-r from-green-400 to-blue-500 p-3 drop-shadow-2xl lg:px-8"
         aria-label="Global"
       >
-        <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
-            <img
-              className="h-8 w-auto"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-              alt=""
-            />
-          </a>
-        </div>
-        {/* Mobile menu button */}
+        {/* appears in md-mobile screen - start */}
         <div className="flex lg:hidden ">
           <button
             type="button"
@@ -39,11 +29,13 @@ export default function Navbar() {
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            <Bars3Icon className="h-8 w-8" aria-hidden="true" />
           </button>
         </div>
-        {/* Mobile menu */}
-        <div className="hidden lg:flex lg:gap-x-12 ">
+        {/* appears in md-mobile screen - end */}
+        <div className="flex lg:flex-1"></div> {/*  */}
+        {/* desktop view - start */}
+        <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
             <Link
               key={item.name}
@@ -51,77 +43,78 @@ export default function Navbar() {
               smooth
               spy
               to={item.id}
-              className={`text-sm font-semibold leading-6 text-gray-900 ${
-                active === item.id ? "font-bold text-blue-500" : ""
-              }`}
               duration={500}
               onClick={() => setActive(item.id)}
             >
-              {item.name}
+              <div
+                className={`cursor-pointer text-lg font-semibold leading-6 tracking-wider hover:text-blue-500 ${
+                  active === item.id ? "text-blue-700" : "text-white"
+                }`}
+              >
+                {item.name}
+              </div>
             </Link>
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a
-            href="#"
-            className="rounded-full border px-4 py-1 text-sm font-semibold hover:border-transparent hover:bg-purple-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
+            href="/cv"
+            target="_blank"
+            className="rounded-full border px-4 py-1 text-lg font-semibold tracking-wider text-white hover:border-transparent hover:bg-purple-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
           >
-            Download CV <span aria-hidden="true"></span>
+            View CV
           </a>
         </div>
+        {/* desktop view - end */}
       </nav>
-      {/* Mobile menu */}
+      {/* Mobile menu modal - start */}
       <Dialog
         as="div"
-        className="lg:hidden"
+        className="fixed inset-0 z-50 overflow-hidden lg:hidden"
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
       >
-        <div className="fixed inset-0 z-50" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt=""
-              />
-            </a>
-            <button
-              type="button"
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <span className="sr-only">Close menu</span>
-              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-            </button>
-          </div>
-          <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="space-y-2 py-6">
-                {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.id}
-                    className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+        <Dialog.Panel className="flex h-full flex-col place-content-center bg-gradient-to-r from-green-400 to-blue-500">
+          <button
+            type="button"
+            className="fixed top-0 rounded-md p-3"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <span className="sr-only">Close menu</span>
+            <XMarkIcon className="h-8 w-8" aria-hidden="true" />
+          </button>
+          <div className="flex flex-col">
+            {navigation.map((item) => (
+              <div
+                key={item.name}
+                onClick={() => setActive(item.id)}
+                className="my-4"
+              >
+                <Link
+                  activeClass="active"
+                  smooth
+                  spy
+                  to={item.id}
+                  duration={500}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    setActive(item.id);
+                  }}
+                >
+                  <div
+                    className={`text-center text-3xl  font-semibold hover:text-blue-500 ${
+                      active === item.id ? "text-blue-500" : "text-white"
+                    }`}
                   >
                     {item.name}
-                  </a>
-                ))}
+                  </div>
+                </Link>
               </div>
-              <div className="py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Connect with me!
-                </a>
-              </div>
-            </div>
+            ))}
           </div>
         </Dialog.Panel>
       </Dialog>
+      {/* Mobile menu modal - start */}
     </div>
   );
 }

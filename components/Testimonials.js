@@ -22,15 +22,15 @@ const recommendations = [
 ];
 
 function SimpleSlider() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [countdown, setCountdown] = useState(7);
+  // const [currentSlide, setCurrentSlide] = useState(0);
+  // const [countdown, setCountdown] = useState(7);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCountdown((countdown) => countdown - 1);
-    }, 1000);
-    return () => clearInterval(timer);
-  }, [currentSlide]);
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     setCountdown((countdown) => countdown - 1);
+  //   }, 1000);
+  //   return () => clearInterval(timer);
+  // }, [currentSlide]);
 
   var settings = {
     dots: true,
@@ -41,21 +41,25 @@ function SimpleSlider() {
     autoplaySpeed: 7000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    afterChange: (index) => {
-      setCurrentSlide(index);
-      setCountdown(7);
-    },
+    // afterChange: (index) => {
+    //   setCurrentSlide(index);
+    //   setCountdown(7);
+    // },
+    arrows: false,
   };
   return (
-    <div className="container mx-auto max-w-2xl lg:max-w-4xl lg:py-20">
+    <div className="container mx-auto max-w-2xl lg:max-w-4xl">
       <Slider {...settings}>
         {recommendations.map((recommendation) => (
-          <figure className="mt-10" key={recommendation.name}>
+          <figure
+            className="mb-8 rounded-3xl bg-slate-50/50 p-2 md:mx-4 md:p-4"
+            key={recommendation.name}
+          >
             <blockquote className="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
-              <p>{recommendation.quote}</p>
+              <p className="italic">&quot;{recommendation.quote}&quot;</p>
             </blockquote>
             <figcaption className="mt-10">
-              <div className="mt-4 flex items-center justify-center space-x-3 text-base">
+              <div className="mt-4 flex flex-col items-center justify-center space-x-3 text-base">
                 <div className="font-semibold text-gray-900">
                   {recommendation.name}
                 </div>
@@ -66,14 +70,17 @@ function SimpleSlider() {
           </figure>
         ))}
       </Slider>
-      <div className="mt-4 p-5 text-center">Next slide in {countdown}s</div>
+      {/* <div className="mt-4 p-5 text-center">Next slide in {countdown}s</div> */}
     </div>
   );
 }
 
 export default function Testimonials() {
   return (
-    <section id="recommendations" className="flex justify-center">
+    <section id="recommendations" className="flex flex-col justify-center mb-10">
+      <h2 className="mb-10 w-full px-4 text-center text-4xl font-bold uppercase tracking-widest text-blue-500">
+        Testimonials
+      </h2>
       <SimpleSlider />
     </section>
   );
