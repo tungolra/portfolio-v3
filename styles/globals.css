@@ -36,3 +36,7 @@
   animation: rotate 15s linear infinite;
   transform-origin: 84px 93px;
 }
+
+#profilePicture { 
+  /* height: 100%; */
+}

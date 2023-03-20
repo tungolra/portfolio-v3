@@ -45,17 +45,21 @@ function SimpleSlider() {
       setCurrentSlide(index);
       setCountdown(7);
     },
+    arrows: false,
   };
   return (
     <div className="container mx-auto max-w-2xl lg:max-w-4xl lg:py-20">
       <Slider {...settings}>
         {recommendations.map((recommendation) => (
-          <figure className="mt-10" key={recommendation.name}>
+          <figure
+            className="mb-8 rounded-3xl bg-slate-50/50 p-2 md:mx-4 md:p-4"
+            key={recommendation.name}
+          >
             <blockquote className="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
-              <p>{recommendation.quote}</p>
+              <p className="italic" >"{recommendation.quote}"</p>
             </blockquote>
             <figcaption className="mt-10">
-              <div className="mt-4 flex items-center justify-center space-x-3 text-base">
+              <div className="mt-4 flex flex-col items-center justify-center space-x-3 text-base">
                 <div className="font-semibold text-gray-900">
                   {recommendation.name}
                 </div>

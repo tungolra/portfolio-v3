@@ -165,7 +165,7 @@ export default function ContactForm() {
       </div>
       <div className="flex flex-col justify-between bg-gray-100 p-4 md:flex-row">
         <div>
-          <p>&copy; Ralph Tungol {new Date().getFullYear()}</p>
+          <p>&copy; Ralph Tu&#241;gol {new Date().getFullYear()}</p>
         </div>
         <div className="flex flex-row items-center">
           <p>This portfolio is powered by:</p>

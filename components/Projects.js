@@ -3,20 +3,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const Button = ({ onClick, children }) => {
-  return (
-    <button
-      onClick={onClick}
-      className="rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50"
-    >
-      {children}
-    </button>
-  );
-};
-
 const Badge = ({ children }) => {
   return (
-    <span className="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800">
+    <span className="mx-1 inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800">
       {children}
     </span>
   );
@@ -212,22 +201,31 @@ function SimpleSlider({ project }) {
     arrows: false,
   };
   return (
-    <div className="container mx-auto max-w-2xl lg:max-w-4xl lg:py-20">
-      <h3 className="mb-2 text-2xl font-medium">{project.name}</h3>
+    <div className="container mx-auto max-w-2xl lg:max-w-4xl lg:py-20 ">
       <Slider {...settings}>
         <div>
-          <p className="mb-6 text-lg text-gray-600">{project.summary}</p>
+          <h3 className="mb-2 text-2xl font-bold">About This Project</h3>
+          <p className="mb-6 text-lg text-gray-600 ">{project.summary}</p>
           <div className="mb-4">
             {project.skills.map((skill) => (
-              <Badge key={skill}>{skill}</Badge>
+              <Badge key={skill} >
+                {skill}
+              </Badge>
             ))}
           </div>
         </div>
         <div>
-          <h3 className="mb-2 text-2xl font-medium">Responsibilities</h3>
+          <h3 className="mb-2 text-2xl font-bold">Responsibilities</h3>
           <ul className="mb-6 text-lg text-gray-600">
             {project.responsibilities.map((responsibility, idx) => (
-              <li key={idx}>{responsibility}</li>
+              <li
+                key={idx}
+                className={`list-disc text-left ${
+                  idx % 2 == 1 ? "text-slate-500" : "text-gray-700"
+                }`}
+              >
+                {responsibility}
+              </li>
             ))}
           </ul>
         </div>
@@ -236,83 +234,93 @@ function SimpleSlider({ project }) {
   );
 }
 
+const renderProjects = (projectList) =>
+  projectList.map((project, index) => (
+    <div
+      key={project.name}
+      className="mb-8 rounded-3xl bg-slate-50/50 p-2 md:mx-4 md:p-4  "
+    >
+      <div className="grid grid-cols-1 gap-x-8 lg:grid-cols-2 xl:gap-x-12">
+        <h3 className="mb-2 font-sans text-2xl font-bold tracking-widest ">
+          {project.name}
+        </h3>
+        <div
+          className={`relative flex flex-col items-center justify-center lg:col-span-1 ${
+            index % 2 == 0 ? "" : "lg:order-last"
+          }`}
+        >
+          <img
+            src={project.img}
+            alt={project.name}
+            className="aspect-video h-auto max-w-full rounded-2xl border-2 border-solid object-contain p-1"
+          />
+          <div className="mt-2 grid grid-cols-2 gap-x-2">
+            {project.pages.slice(0, 2).map((page) => (
+              <div
+                key={page}
+                className="relative flex flex-col items-center justify-center"
+              >
+                <img
+                  src={page}
+                  alt={project.name}
+                  className="aspect-[2/1] h-auto max-w-full rounded-2xl border-2 border-solid object-contain p-1"
+                />
+              </div>
+            ))}
+          </div>
+          <div className="absolute z-10 hidden h-full w-full items-center justify-center bg-black bg-opacity-70">
+            <a
+              isDisabled={project.site === "[offline]"}
+              target="_blank"
+              rel="noopener noreferrer"
+              href={project.site}
+              className="rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50"
+            >
+              Visit Site
+            </a>
+            <a
+              href={project.repo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50"
+            >
+              View Code
+            </a>
+          </div>
+        </div>
+        <div className="flex flex-col justify-between lg:col-span-1">
+          <SimpleSlider project={project} />
+          <div className="flex justify-between md:justify-around">
+            <a
+              href={project.site}
+              isDisabled={project.site === "[offline]"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50"
+            >
+              Visit Site
+            </a>
+
+            <a
+              href={project.repo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50"
+            >
+              View Code
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  ));
+
 export default function Projects() {
   const [page, setPage] = useState(featured);
 
   const toggleShowFeatured = () => {
     setPage(!page);
   };
-
-  const renderProjects = (projectList) =>
-    projectList.map((project, index) => (
-      <div key={project.name} className="mb-8 p-2 lg:mb-12 lg:p-10">
-        <div className="grid gap-x-8 lg:grid-cols-2 xl:gap-x-12">
-          <div
-            className={`relative flex flex-col items-center justify-center lg:col-span-1 ${
-              index % 2 == 0 ? "" : "lg:order-last"
-            }`}
-          >
-            <img
-              src={project.img}
-              alt={project.name}
-              className="aspect-video h-auto max-w-full border-2 border-black object-contain "
-            />
-            <div className="mt-2 grid grid-cols-2 gap-x-2">
-              {project.pages.slice(0, 2).map((page) => (
-                <div
-                  key={page}
-                  className="relative flex flex-col items-center justify-center"
-                >
-                  <img
-                    src={page}
-                    alt={project.name}
-                    className="aspect-[2/1] h-auto max-w-full border-2 border-black bg-black object-contain"
-                  />
-                </div>
-              ))}
-            </div>
-            <div className="absolute z-10 hidden h-full w-full items-center justify-center bg-black bg-opacity-70">
-              <Button
-                href={project.site}
-                isDisabled={project.site === "[offline]"}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Visit Site
-              </Button>
-              <Button
-                href={project.repo}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Code
-              </Button>
-            </div>
-          </div>
-          <div className="flex flex-col justify-between lg:col-span-1">
-            <SimpleSlider project={project} />
-            <div className="flex justify-between">
-              <Button
-                href={project.site}
-                isDisabled={project.site === "[offline]"}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Visit Site
-              </Button>
-
-              <Button
-                href={project.repo}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Code
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
-    ));
 
   return (
     <div id="projects" className="py-20 text-center ">

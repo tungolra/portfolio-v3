@@ -10,7 +10,6 @@ const navigation = [
   { name: "Testimonials", id: "recommendations" },
   { name: "Contact", id: "contact" },
 ];
-
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [active, setActive] = useState(null);
@@ -43,7 +42,7 @@ export default function Navbar() {
           </button>
         </div>
         {/* Mobile menu */}
-        <div className="hidden lg:flex lg:gap-x-12 ">
+        <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
             <Link
               key={item.name}
@@ -51,13 +50,13 @@ export default function Navbar() {
               smooth
               spy
               to={item.id}
-              className={`text-sm font-semibold leading-6 text-gray-900 ${
-                active === item.id ? "font-bold text-blue-500" : ""
-              }`}
               duration={500}
+              className={`cursor-pointer text-sm font-semibold leading-6 hover:text-blue-500 ${
+                active === item.id ? "text-blue-500" : "text-gray-900"
+              }`}
               onClick={() => setActive(item.id)}
             >
-              {item.name}
+              <div>{item.name}</div>
             </Link>
           ))}
         </div>
@@ -99,15 +98,30 @@ export default function Navbar() {
           </div>
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="space-y-2 py-6">
+              <div className="space-y-2 py-6 ">
                 {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.id}
-                    className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  <div
+                    className={`text-sm font-semibold leading-6 text-gray-900 `}
+                    onClick={() => setActive(item.id)}
                   >
-                    {item.name}
-                  </a>
+                    <Link
+                      key={item.name}
+                      activeClass="active"
+                      smooth
+                      spy
+                      to={item.id}
+                      duration={500}
+                      className={`text-lg font-semibold  hover:text-blue-500 ${
+                        active === item.id ? "text-blue-500" : "text-gray-900"
+                      }`}
+                      onClick={() => {
+                        setMobileMenuOpen(false);
+                        setActive(item.id);
+                      }}
+                    >
+                      <div>{item.name}</div>
+                    </Link>
+                  </div>
                 ))}
               </div>
               <div className="py-6">
