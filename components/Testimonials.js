@@ -56,7 +56,7 @@ function SimpleSlider() {
             key={recommendation.name}
           >
             <blockquote className="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
-              <p className="italic" >"{recommendation.quote}"</p>
+              <p className="italic" >&quot;{recommendation.quote}&quot;</p>
             </blockquote>
             <figcaption className="mt-10">
               <div className="mt-4 flex flex-col items-center justify-center space-x-3 text-base">
