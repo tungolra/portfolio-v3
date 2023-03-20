@@ -101,11 +101,11 @@ export default function Navbar() {
               <div className="space-y-2 py-6 ">
                 {navigation.map((item) => (
                   <div
+                    key={item.name}
                     className={`text-sm font-semibold leading-6 text-gray-900 `}
                     onClick={() => setActive(item.id)}
                   >
                     <Link
-                      key={item.name}
                       activeClass="active"
                       smooth
                       spy
