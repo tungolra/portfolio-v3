@@ -14,7 +14,7 @@ const services = [
 
 export default function Services() {
   return (
-    <div id="services" className="bg-gray-100 py-10">
+    <div id="services" className=" py-10">
       <h2 className="mb-10 text-center text-4xl">Services</h2>
       <div className="mx-auto flex max-w-6xl flex-wrap justify-center md:justify-between">
         {services.map((service) => (

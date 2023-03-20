@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
-
 import Image from "next/image";
 import Slider from "react-slick";
+import Link from "next/link";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { education } from "@/seed";
@@ -45,18 +44,25 @@ function SimpleSlider() {
 
 export default function Header() {
   return (
-    <header className="flex h-screen flex-col md:max-w-full md:flex-row">
-      <div className="flex flex-col justify-center bg-gray-500 p-10 text-center text-white md:w-1/2">
+    <header className="z-10 flex h-screen flex-col md:max-w-full md:flex-row">
+      <div className="flex flex-col justify-center  p-10 text-center  md:w-1/2">
         <h2>Ralph Tu&#241;gol</h2>
         <p>Full-Stack Software Developer</p>
         <SimpleSlider />
-        <div>
-          <button className="rounded-full border px-4 py-1 text-sm font-semibold hover:border-transparent hover:bg-purple-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">
-            Get in touch!
-          </button>
+        <span>Let&apos;s Connect!</span>
+        <div className="flex justify-center p-3 ">
+          <Link href="" className="mx-3">
+            LinkedIn
+          </Link>
+          <Link href="" className="mx-3">
+            Email
+          </Link>
+          <Link href="" className="mx-3">
+            GitHub
+          </Link>
         </div>
       </div>
-      <div className="flex items-end justify-end bg-black md:w-1/2">
+      <div className="flex items-end justify-end  md:w-1/2">
         <Image
           src="/profile-picture-nobgd.png"
           alt="profile-picture"

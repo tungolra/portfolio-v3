@@ -315,7 +315,7 @@ export default function Projects() {
     ));
 
   return (
-    <div id="projects" className="py-20 text-center">
+    <div id="projects" className="py-20 text-center ">
       <div className="mb-8 ">
         <h2 className="mb-4 text-4xl font-bold">Featured Projects</h2>
         <div className="flex items-center justify-center">

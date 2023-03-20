@@ -46,9 +46,9 @@ export default function ContactForm() {
   // const isFormValid =
   //   name && subject && email && message && email.includes("@");
   return (
-    <div id="contact">
-      <h1 className="mb-10 text-center text-4xl font-bold">Contact</h1>
-      <div className="flex min-h-screen items-center justify-center bg-gray-100">
+    <div id="contact" className="">
+      <h1 className="mb-10 text-center text-4xl font-bold py-10">Contact</h1>
+      <div className="flex min-h-screen items-center justify-center ">
         <div class="flex flex-col md:flex-row">
           <div class="w-full md:w-1/2 md:pr-4">
             <p class="mb-2 text-lg font-medium">Socials here:</p>
@@ -165,14 +165,14 @@ export default function ContactForm() {
       </div>
       <div className="flex flex-col justify-between bg-gray-100 p-4 md:flex-row">
         <div>
-          <p>&copy; [Your full name] {new Date().getFullYear()}</p>
+          <p>&copy; Ralph Tungol {new Date().getFullYear()}</p>
         </div>
         <div className="flex flex-row items-center">
           <p>This portfolio is powered by:</p>
           <div className="ml-2 flex flex-row items-center">
             <img
               className="mr-1 h-4 w-4"
-              src="placeholder1.png"
+              src="@/public/vercel.svg"
               alt="placeholder1"
             />
             <img
