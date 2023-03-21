@@ -7,6 +7,8 @@ import { education } from "@/seed";
 import GitHubIcon from "@/public/social-icons/github/github-original.svg";
 import LinkedInIcon from "@/public/social-icons/linkedin/linkedin-original.svg";
 import EmailIcon from "@/public/email.svg";
+import BlobI from "@/public/blob-scene-haikei.svg";
+
 function SimpleSlider() {
   var settings = {
     dots: true,
@@ -18,16 +20,31 @@ function SimpleSlider() {
     arrows: false,
   };
   return (
-    <div className="container  m-3 mx-auto max-w-2xl lg:max-w-4xl lg:py-20">
+    <div className="mb-10 md:mb-2">
       <Slider {...settings}>
-        <div className="flex items-center">
-          <p className="rounded-2xl bg-slate-50/50 p-3 text-justify shadow-lg">
-            High-performing Software Developer with a passion for creating
-            innovative and robust web applications. <br /> As a former
-            professional within the finance industry and a multidisciplinary
-            degree, I have 5+ years of professional experience collaborating
-            within cross-functional teams and 4+ years of rigorous,
-            research-driven, human-centric academic experiences.
+        <div className="flex items-center ">
+          <p className="mb-3 rounded-2xl bg-slate-50/50 p-3 text-left  shadow-lg">
+            Thanks for stopping by! I&apos;m Ralph, a{" "}
+            <span className="font-bold text-blue-500">software developer</span>{" "}
+            with a background in the{" "}
+            <span className="font-bold text-blue-500">
+              social sciences and finance industry
+            </span>
+            !
+          </p>
+          <p className="mb-3 rounded-2xl bg-slate-50/50 p-3 text-left  shadow-lg">
+            I&apos;m passionate about building{" "}
+            <span className="font-bold text-blue-500">web applications</span>{" "}
+            that are fast, responsive, and accessible.
+          </p>
+          <p className="mb-3 rounded-2xl bg-slate-50/50 p-3 text-left  shadow-lg">
+            I&apos;m based in the{" "}
+            <span className="font-bold text-blue-500">Toronto, Canada 🇨🇦</span>{" "}
+            and always down for a quick coffee &#9749; or beer &#127867;!
+          </p>
+          <p className="mb-3 rounded-2xl bg-slate-50/50 p-3 text-left  shadow-lg">
+            I love sports &#127938; &#127936; &#127952; &#127947;, travelling &#128745;,
+            and hiking &#127956; &#127957; - to name a few!
           </p>
         </div>
         <div>
@@ -57,55 +74,64 @@ function SimpleSlider() {
     </div>
   );
 }
-
+const Socials = () => {
+  return (
+    <>
+      <Link
+        href="https://www.linkedin.com/in/ralph-tungol/"
+        target="_blank"
+        className="mx-3 transition delay-150 duration-300 ease-in-out hover:-translate-y-1  hover:scale-110"
+        rel="noopener noreferrer"
+      >
+        <Image src={LinkedInIcon} width={50} />
+      </Link>
+      <Link
+        href="mailto:rarttungol@gmail.com"
+        target="_blank"
+        className="mx-3 transition delay-150 duration-300 ease-in-out hover:-translate-y-1  hover:scale-110"
+        rel="noopener noreferrer"
+      >
+        <Image src={EmailIcon} width={50} />
+      </Link>
+      <Link
+        href="https://github.com/tungolra"
+        target="_blank"
+        className="mx-3 transition delay-150 duration-300 ease-in-out hover:-translate-y-1  hover:scale-110"
+        rel="noopener noreferrer"
+      >
+        <Image src={GitHubIcon} width={50} />
+      </Link>
+    </>
+  );
+};
 export default function Header() {
   return (
     <header className="z-10 flex h-screen flex-col md:max-w-full md:flex-row">
-      <div className="flex flex-col justify-center  p-10 text-center md:w-1/2 ">
-        <h2 className="w-full text-5xl font-bold uppercase tracking-widest md:text-left">
+      <div className="my-10 flex flex-col justify-center  px-10 text-center md:w-1/2 ">
+        <h2 className="w-full px-4 text-5xl font-bold uppercase tracking-widest text-blue-900 md:text-left">
           Ralph Tu&#241;gol
         </h2>
-        <h3 className="w-full text-2xl font-bold uppercase md:text-left">
+        <h3 className=" w-full px-4 text-2xl font-bold uppercase text-blue-700 md:text-left">
           Full-Stack Software Developer
         </h3>
-        <SimpleSlider />
-        <div className="mt-5 rounded-3xl bg-slate-50/50">
-          <span className=" font-bold ">Let&apos;s Connect!</span>
+        <div className="container mx-auto max-w-2xl lg:max-w-4xl lg:py-20">
+          <SimpleSlider />
+        </div>
+        <div className="rounded-3xl bg-slate-50/50 ">
+          <span className=" font-bold text-blue-700 ">Let&apos;s Connect!</span>
           <div className="flex justify-center p-3 ">
-            <Link
-              href="https://www.linkedin.com/in/ralph-tungol/"
-              target="_blank"
-              className="mx-3"
-              rel="noopener noreferrer"
-            >
-              <Image src={LinkedInIcon} width={50} />
-            </Link>
-            <Link
-              href="mailto:rarttungol@gmail.com"
-              target="_blank"
-              className="mx-3"
-              rel="noopener noreferrer"
-            >
-              <Image src={EmailIcon} width={50} />
-            </Link>
-            <Link
-              href="https://github.com/tungolra"
-              target="_blank"
-              className="mx-3"
-              rel="noopener noreferrer"
-            >
-              <Image src={GitHubIcon} width={50} />
-            </Link>
+            <Socials />
           </div>
         </div>
       </div>
       <div className="flex h-1/2 items-end justify-end md:h-full md:w-1/2">
+        <Image src={BlobI} className="hidden md:block absolute -z-40 object-cover h-full w-full"/>
         <Image
           src="/profile-picture-nobgd.png"
           alt="profile-picture"
-          width={350}
-          height={350}
-          className="absolute -z-10 object-contain object-scale-down object-right-bottom"
+          width={500}
+          height={500}
+          className="absolute -z-30 object-scale-down object-right-bottom "
         />
       </div>
     </header>

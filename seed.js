@@ -2,124 +2,162 @@ let tool = "https://i.imgur.com/LFuPbmG.png";
 let lab = "https://i.imgur.com/VP2HfTC.png";
 let stock = "https://i.imgur.com/5gKzj9A.png";
 
+import HTML from "@/public/dev-icons/html5/html5-original.svg";
+import CSS from "@/public/dev-icons/css3/css3-original.svg";
+import JS from "@/public/dev-icons/javascript/javascript-original.svg";
+import TS from "@/public/dev-icons/typescript/typescript-original.svg";
+import React from "@/public/dev-icons/react/react-original.svg";
+import Redux from "@/public/dev-icons/redux/redux-original.svg";
+// import MobX from "@/public/dev-icons/mobx/mobx-original.svg";
+import Angular from "@/public/dev-icons/angularjs/angularjs-original.svg";
+import Node from "@/public/dev-icons/nodejs/nodejs-original.svg";
+import Express from "@/public/dev-icons/express/express-original.svg";
+import MongoDB from "@/public/dev-icons/mongodb/mongodb-original.svg";
+import Postgres from "@/public/dev-icons/postgresql/postgresql-original.svg";
+import Java from "@/public/dev-icons/java/java-original.svg";
+import Spring from "@/public/dev-icons/spring/spring-original.svg";
+import Git from "@/public/dev-icons/git/git-original.svg";
+// import Github from "@/public/dev-icons/github/github-original.svg";
+import VSCode from "@/public/dev-icons/vscode/vscode-original.svg";
+// import Webpack from "@/public/dev-icons/webpack/webpack-original.svg";
+import Tailwind from "@/public/dev-icons/tailwindcss/tailwindcss-plain.svg";
+import MaterialUI from "@/public/dev-icons/materialui/materialui-original.svg";
+import Bootstrap from "@/public/dev-icons/bootstrap/bootstrap-plain.svg";
+import jQuery from "@/public/dev-icons/jquery/jquery-original.svg";
+import Sass from "@/public/dev-icons/sass/sass-original.svg";
+import Next from "@/public/dev-icons/nextjs/nextjs-original.svg";
+import Heroku from "@/public/dev-icons/heroku/heroku-original.svg";
+import Vercel from "@/public/favicon.ico";
+import AWS from "@/public/dev-icons/amazonwebservices/amazonwebservices-original.svg";
+import Django from "@/public/dev-icons/django/django-plain.svg";
+import Python from "@/public/dev-icons/python/python-original.svg";
+import SocketIO from "@/public/dev-icons/socketio/socketio-original.svg";
+import NPM from "@/public/dev-icons/npm/npm-original-wordmark.svg";
+import Jest from "@/public/dev-icons/jest/jest-plain.svg";
+import Mocha from "@/public/dev-icons/mocha/mocha-plain.svg";
+import ESLint from "@/public/dev-icons/eslint/eslint-original.svg";
+import Markdown from "@/public/dev-icons/markdown/markdown-original.svg";
+import MobX from "@/public/dev-icons/mobx/mobx.svg";
+import Stripe from "@/public/dev-icons/stripe/stripe.svg";
+
 export const skills = [
   {
-    type: "Languages",
+    type: "frontend",
     subtype: "Markup Language",
     skill: "HTML5",
-    img: "https://i.imgur.com/xMMSqAc.png",
+    img: HTML,
     priority: "main",
   },
   {
     type: "Languages",
     subtype: "Programming Language",
     skill: "Typescript",
-    img: "https://i.imgur.com/HPlbDDQ.png",
+    img: TS,
     priority: "alternative",
   },
   {
     type: "Languages",
     subtype: "Programming Language",
     skill: "Java",
-    img: "https://i.imgur.com/YJjKbt4.png",
+    img: Java,
     priority: "alternative",
   },
   {
-    type: "Languages",
+    type: "frontend",
     subtype: "Styling Language",
     skill: "CSS3",
-    img: "https://i.imgur.com/jTNhsgg.png",
+    img: CSS,
     priority: "main",
   },
   {
-    type: "Languages",
+    type: "frontend",
     subtype: "Styling Framework",
     skill: "Tailwind",
-    img: "https://i.imgur.com/0Q0d39h.png",
+    img: Tailwind,
     priority: "main",
   },
   {
-    type: "Languages",
+    type: "frontend",
     subtype: "Styling Language",
     skill: "SCSS",
-    img: "https://i.imgur.com/jkKieiK.png",
+    img: Sass,
     priority: "alternative",
   },
   {
-    type: "Technologies",
+    type: "frontend",
     subtype: "Styling Framework",
     skill: "Materialize",
     img: "https://i.imgur.com/kLtV7aP.png",
     priority: "alternative",
   },
   {
-    type: "Technologies",
+    type: "frontend",
     subtype: "Styling Framework",
     skill: "Material UI",
-    img: "https://i.imgur.com/nQneTU6.png",
+    img: MaterialUI,
     priority: "alternative",
   },
   {
-    type: "Technologies",
+    type: "frontend",
     subtype: "Styling Language",
     skill: "Bootstrap",
-    img: "https://i.imgur.com/NsKingN.png",
+    img: Bootstrap,
     priority: "main",
   },
   {
-    type: "Technologies",
+    type: "frontend",
     subtype: "Framework",
     skill: "Angular",
-    img: "https://i.imgur.com/yldqsTl.jpg",
+    img: Angular,
     priority: "alternative",
   },
   {
     type: "Technologies",
     subtype: "Framework",
     skill: "SpringBoot",
-    img: "https://i.imgur.com/fozEzEY.png",
+    img: Spring,
     priority: "alternative",
   },
   {
     type: "Technologies",
     subtype: "Framework",
     skill: "jQuery",
-    img: "https://i.imgur.com/dltSXkL.png",
+    img: jQuery,
     priority: "alternative",
   },
   {
     type: "Technologies",
     subtype: "Framework",
     skill: "React",
-    img: "https://i.imgur.com/I9A7c4b.png",
+    img: React,
     priority: "main",
   },
   {
     type: "Technologies",
     subtype: "Framework",
     skill: "Redux",
-    img: "https://i.imgur.com/B5jiJo7.png",
+    img: Redux,
     priority: "useful",
   },
   {
     type: "Technologies",
     subtype: "Framework",
     skill: "MobX",
-    img: "https://i.imgur.com/B5jiJo7.png",
+    img: MobX,
     priority: "useful",
   },
   {
     type: "Technologies",
     subtype: "Framework",
     skill: "Node.js",
-    img: "https://i.imgur.com/SqYTp68.png",
+    img: Node,
     priority: "main",
   },
   {
     type: "Languages",
     subtype: "Programming Language",
     skill: "JavaScript",
-    img: "https://i.imgur.com/ckfbsq5.png",
+    img: JS,
     priority: "main",
   },
   {
@@ -133,7 +171,7 @@ export const skills = [
     type: "Technologies",
     subtype: "Database",
     skill: "MongoDB",
-    img: "https://i.imgur.com/a0RoQoD.png",
+    img: MongoDB,
     priority: "main",
   },
   {
@@ -147,77 +185,119 @@ export const skills = [
     type: "Technologies",
     subtype: "Database",
     skill: "PostgreSQL",
-    img: "https://i.imgur.com/kqTfCNX.png",
+    img: Postgres,
     priority: "alternative",
   },
   {
     type: "Technologies",
     subtype: "Cloud Platform",
     skill: "Heroku",
-    img: "https://i.imgur.com/TQ5qUGp.png",
+    img: Heroku,
     priority: "essential",
   },
   {
     type: "Technologies",
     subtype: "Cloud Platform",
     skill: "Vercel",
-    img: "https://i.imgur.com/TQ5qUGp.png",
+    img: Vercel,
     priority: "essential",
   },
   {
     type: "Technologies",
     subtype: "Version Control Software",
     skill: "Git",
-    img: "https://i.imgur.com/P6KIeEm.png",
+    img: Git,
     priority: "essential",
   },
   {
     type: "Technologies",
     subtype: "Database",
     skill: "AWS S3",
-    img: "https://i.imgur.com/n3fTnNv.png",
+    img: AWS,
     priority: "alternative",
   },
   {
     type: "Technologies",
     subtype: "Framework",
     skill: "Django",
-    img: "https://i.imgur.com/CTDcDh6.png",
+    img: Django,
     priority: "alternative",
   },
   {
     type: "Languages",
     subtype: "Programming Language",
     skill: "Python",
-    img: "https://i.imgur.com/ofIVvdH.png",
+    img: Python,
     priority: "alternative",
   },
   {
     type: "Technologies",
     subtype: "Framework",
     skill: "Express",
-    img: "https://i.imgur.com/awaqvUm.png",
+    img: Express,
     priority: "main",
   },
   {
     type: "Technologies",
     subtype: "Framework",
     skill: "Next",
-    img: "https://i.imgur.com/awaqvUm.png",
+    img: Next,
     priority: "main",
   },
   {
     type: "Technologies",
     subtype: "Library",
     skill: "Socket.io",
-    img: "https://i.imgur.com/oCCYHpS.png",
+    img: SocketIO,
     priority: "useful",
   },
   {
     type: "Technologies",
     subtype: "Library",
     skill: "Stripe.io",
-    img: "https://i.imgur.com/oCCYHpS.png",
+    img: Stripe,
+    priority: "useful",
+  },
+  {
+    type: "Technologies",
+    subtype: "tool",
+    skill: "VSCode",
+    img: VSCode,
+    priority: "essential",
+  },
+  {
+    type: "Technologies",
+    subtype: "tool",
+    skill: "NPM",
+    img: NPM,
+    priority: "essential",
+  },
+  {
+    type: "Technologies",
+    subtype: "tool",
+    skill: "Markdown",
+    img: Markdown,
+    priority: "essential",
+  },
+  {
+    type: "Technologies",
+    subtype: "tool",
+    skill: "Jest",
+    img: Jest,
+    priority: "essential",
+  },
+  {
+    type: "Technologies",
+    subtype: "tool",
+    skill: "Mocha",
+    img: Mocha,
+    priority: "useful",
+  },
+  {
+    type: "Technologies",
+    subtype: "tool",
+    skill: "ESLint",
+    img: ESLint,
     priority: "useful",
   },
 ];
@@ -282,7 +362,11 @@ export const projects = [
   {
     name: "Wealthy-Mi",
     img: "https://i.imgur.com/SWCYvDG.gif",
-    pages: ["https://i.imgur.com/SWCYvDG.gif"],
+    pages: [
+      "https://i.imgur.com/SWCYvDG.gif",
+      "https://i.imgur.com/SWCYvDG.gif",
+      "https://i.imgur.com/SWCYvDG.gif",
+    ],
     summary:
       "Wealthy Mi is a personal finance application created as development exercise for using a modern MERN-stack (MongoDB, ExpressJS, React, NodeJS) and implementing Agile workflow practices. Users can manage their assets and expenses, create financial goals, and forecast when they can achieve them through their dashboard with our data visualization tools.",
     responsibilities: [
@@ -375,7 +459,10 @@ export const projects = [
   {
     name: "Othello",
     img: "https://i.imgur.com/FEbqK0L.gif",
-    pages: ["https://i.imgur.com/FEbqK0L.gif"],
+    pages: [
+      "https://i.imgur.com/FEbqK0L.gif",
+      "https://i.imgur.com/FEbqK0L.gif",
+    ],
     summary:
       "Othello, AKA Reversi, is a multiplayer, strategy board game where players aim to have the most pieces on the board before it is filled. My app features a random-bot that single-player users can play against. Developed using Vanilla JavaScript, this independent project showcases DOM manipulation, functional programming, modularization, and complex game logic. Utilized HTML and pure CSS to style a modern-classic UI/UX.",
     responsibilities: [

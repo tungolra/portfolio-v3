@@ -7,6 +7,7 @@ import Contact from "@/components/Contact";
 import About from "@/components/Header";
 import Services from "@/components/Services";
 import TechStack from "@/components/TechStack";
+import AboutMe from "@/components/AboutMe";
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
         xmlns="http://www.w3.org/2000/svg"
         preserveAspectRatio="xMidYMid slice"
         viewBox="0 0 100 100"
-        className="headerBackground fixed inset-0 opacity-50 blur-lg"
+        className="headerBackground fixed inset-0 opacity-50 blur-lg -z-50"
       >
         <path
           fill="#9b5de5"
@@ -43,7 +44,7 @@ export default function Home() {
         <title>Ralph Tungol Portfolio</title>
         <meta name="description" content="Ralph Tungol Portfolio" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/header-background.svg" />
       </Head>
       <About />
       <Navbar />
@@ -51,6 +52,7 @@ export default function Home() {
       <TechStack />
       <Projects />
       <Testimonials />
+      {/* <AboutMe/> */}
       <Contact />
     </div>
   );

@@ -7,6 +7,7 @@ import Image from "next/image";
 import NextIcon from "@/public/dev-icons/nextjs/nextjs-original.svg";
 import ReactIcon from "@/public/dev-icons/react/react-original.svg";
 import VercelIcon from "@/public/favicon.ico";
+import BlobI from "@/public/blob-scene-haikei.svg";
 
 const Socials = () => {
   return (
@@ -14,7 +15,7 @@ const Socials = () => {
       <Link
         href="https://www.linkedin.com/in/ralph-tungol/"
         target="_blank"
-        className="mx-3 grayscale"
+        className="mx-3  transition delay-150 duration-300 ease-in-out hover:-translate-y-1  hover:scale-110"
         rel="noopener noreferrer"
       >
         <Image src={LinkedInIcon} width={50} />
@@ -22,7 +23,7 @@ const Socials = () => {
       <Link
         href="mailto:rarttungol@gmail.com"
         target="_blank"
-        className="mx-3 grayscale"
+        className="hover:scale-120  mx-3 transition delay-150 duration-300 ease-in-out  hover:-translate-y-1"
         rel="noopener noreferrer"
       >
         <Image src={EmailIcon} width={50} />
@@ -30,7 +31,7 @@ const Socials = () => {
       <Link
         href="https://github.com/tungolra"
         target="_blank"
-        className="mx-3 grayscale"
+        className="mx-3  transition delay-150 duration-300 ease-in-out hover:-translate-y-1  hover:scale-110"
         rel="noopener noreferrer"
       >
         <Image src={GitHubIcon} width={50} />
@@ -189,11 +190,12 @@ export default function Contact() {
   return (
     <div
       id="contact"
-      className="flex flex-col bg-gradient-to-r from-green-400 to-blue-500 opacity-75"
+      className="flex flex-col bg-gradient-to-r from-green-400 to-blue-500"
     >
+          
       <div className="grid-flow-row grid-cols-3 md:grid ">
         <div className="col-span-1 p-10 ">
-          <h2 className="from-indigo-500/150 my-4 mb-2 rounded-xl bg-gradient-to-l px-2  text-2xl font-bold ">
+          <h2 className=" my-4 mb-2 rounded-xl text-2xl font-bold">
             Get in Touch!
           </h2>
           <p className="my-4">
@@ -211,10 +213,10 @@ export default function Contact() {
       </div>
 
       <div className="flex flex-col justify-between bg-gradient-to-r from-green-400 to-blue-500 p-4 drop-shadow-2xl md:flex-row">
-        <div>
-          <p>&copy; Ralph Tu&#241;gol {new Date().getFullYear()}</p>
+        <div className="font-bold uppercase">
+          <p>Ralph Tu&#241;gol {new Date().getFullYear()}</p>
         </div>
-        <div className="flex flex-row items-center">
+        <div className="flex flex-row items-center font-bold uppercase">
           <PoweredBy />
         </div>
       </div>
