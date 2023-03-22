@@ -39,8 +39,16 @@ export default function Home() {
         />
       </svg>
       <Head>
-        <title>Ralph Tungol Portfolio</title>
-        <meta name="description" content="Ralph Tungol Portfolio" />
+        <title>Ralph Tungol - Software Developer</title>
+        <meta
+          name="description"
+          content="I'm a high-performing software developer with a finance industry background and a multidisciplinary degree. I specialize in full stack development, scaling applications, responsive web and UI/UX design, project management, and more."
+        />
+        <meta
+          name="keywords"
+          content="software developer, full stack development, UI/UX design, project management, agile workflows"
+        />
+        <meta name="author" content="Ralph Tungol" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/header-background.svg" />
       </Head>
