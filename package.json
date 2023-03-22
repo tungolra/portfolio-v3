@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
+    "@formspree/react": "^2.4.1",
     "@headlessui/react": "^1.7.13",
     "@heroicons/react": "^2.0.16",
     "cssnano": "^5.1.15",

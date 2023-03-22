@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
+
 import Navbar from "@/components/Navbar";
 import Projects from "@/components/Projects";
 import Testimonials from "@/components/Testimonials";
@@ -7,17 +7,15 @@ import Contact from "@/components/Contact";
 import About from "@/components/Header";
 import Services from "@/components/Services";
 import TechStack from "@/components/TechStack";
-import AboutMe from "@/components/AboutMe";
 
 export default function Home() {
   return (
-    <div >
-      {/* <div className="headerBackground fixed inset-0 opacity-50 blur-lg"></div> */}
+    <div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         preserveAspectRatio="xMidYMid slice"
         viewBox="0 0 100 100"
-        className="headerBackground fixed inset-0 opacity-50 blur-lg -z-50"
+        className="headerBackground fixed inset-0 -z-50 opacity-50 blur-lg"
       >
         <path
           fill="#9b5de5"
@@ -52,7 +50,6 @@ export default function Home() {
       <TechStack />
       <Projects />
       <Testimonials />
-      {/* <AboutMe/> */}
       <Contact />
     </div>
   );

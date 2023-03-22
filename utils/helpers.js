@@ -1,7 +1,7 @@
-import { projects } from "@/seed";
-import { skills } from "@/seed";
+import { projects } from "@/lib/data/seed";
+import { skills } from "@/lib/data/seed";
 
-// parse projects 
+// parse projects
 
 export const featured = [];
 projects.map((project) => {

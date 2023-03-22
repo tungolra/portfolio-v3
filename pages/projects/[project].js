@@ -2,14 +2,13 @@
 import React from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { featured } from "@/seed";
+import { featured } from "@/lib/data/seed";
 // import Footer from "@/components/Footer";
 // import { carousel } from "@/library/carouselSection";
 // import { projectDetails } from "@/library/projectDetailsSection";
 // import NavBar from "@/components/NavBar";
 
 export default function ProjectDetailsPage() {
-
   const router = useRouter();
   const project = router.query.project;
   const selectedProject = featured.find((p) => p?.name === project);
@@ -19,8 +18,8 @@ export default function ProjectDetailsPage() {
 
   return (
     <div>
-    <h1>projectdetails</h1>
-    {/* <NavBar/>
+      <h1>projectdetails</h1>
+      {/* <NavBar/>
       <div className={styles.pageContainer}>
         <div className={styles.projectNav}>
           {navProject === 0 ? (

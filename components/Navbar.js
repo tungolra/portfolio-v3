@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { Dialog } from "@headlessui/react";
+import { useState, Fragment } from "react";
+import { Dialog, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-scroll";
-import { Link as NextLink } from "next/link";
+
 
 const navigation = [
   { name: "Services", id: "services" },
@@ -68,52 +68,69 @@ export default function Navbar() {
         {/* desktop view - end */}
       </nav>
       {/* Mobile menu modal - start */}
-      <Dialog
-        as="div"
-        className="fixed inset-0 z-50 overflow-hidden lg:hidden"
-        open={mobileMenuOpen}
-        onClose={setMobileMenuOpen}
+      <Transition
+        appear
+        show={mobileMenuOpen}
+        as={Fragment}
       >
-        <Dialog.Panel className="flex h-full flex-col place-content-center bg-gradient-to-r from-green-400 to-blue-500">
-          <button
-            type="button"
-            className="fixed top-0 rounded-md p-3"
-            onClick={() => setMobileMenuOpen(false)}
+        <Dialog
+          as="div"
+          className="fixed inset-0 z-50 overflow-hidden lg:hidden"
+          open={mobileMenuOpen}
+          onClose={setMobileMenuOpen}
+        >
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
           >
-            <span className="sr-only">Close menu</span>
-            <XMarkIcon className="h-8 w-8" aria-hidden="true" />
-          </button>
-          <div className="flex flex-col">
-            {navigation.map((item) => (
-              <div
-                key={item.name}
-                onClick={() => setActive(item.id)}
-                className="my-4"
+
+            <Dialog.Panel className="flex h-full flex-col place-content-center bg-gradient-to-r from-green-400 to-blue-500">
+              <button
+                type="button"
+                className="fixed top-0 rounded-md p-3"
+                onClick={() => setMobileMenuOpen(false)}
               >
-                <Link
-                  activeClass="active"
-                  smooth
-                  spy
-                  to={item.id}
-                  duration={500}
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    setActive(item.id);
-                  }}
-                >
+                <span className="sr-only">Close menu</span>
+                <XMarkIcon className="h-8 w-8" aria-hidden="true" />
+              </button>
+              <div className="flex flex-col">
+                {navigation.map((item) => (
                   <div
-                    className={`text-center text-3xl  font-semibold hover:text-blue-500 ${
-                      active === item.id ? "text-blue-500" : "text-white"
-                    }`}
+                    key={item.name}
+                    onClick={() => setActive(item.id)}
+                    className="my-4"
                   >
-                    {item.name}
+                    <Link
+                      activeClass="active"
+                      smooth
+                      spy
+                      to={item.id}
+                      duration={500}
+                      onClick={() => {
+                        setMobileMenuOpen(false);
+                        setActive(item.id);
+                      }}
+                    >
+                      <div
+                        className={`text-center text-3xl  font-semibold hover:text-blue-500 ${
+                          active === item.id ? "text-blue-500" : "text-white"
+                        }`}
+                      >
+                        {item.name}
+                      </div>
+                    </Link>
                   </div>
-                </Link>
+                ))}
               </div>
-            ))}
-          </div>
-        </Dialog.Panel>
-      </Dialog>
+            </Dialog.Panel>
+          </Transition.Child>
+        </Dialog>
+      </Transition>
       {/* Mobile menu modal - start */}
     </div>
   );
