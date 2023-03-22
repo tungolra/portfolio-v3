@@ -1,13 +1,10 @@
 import Image from "next/image";
 import Slider from "react-slick";
-import Link from "next/link";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { education } from "@/seed";
-import GitHubIcon from "@/public/social-icons/github/github-original.svg";
-import LinkedInIcon from "@/public/social-icons/linkedin/linkedin-original.svg";
-import EmailIcon from "@/public/email.svg";
+import { education } from "@/lib/data/seed";
 import BlobI from "@/public/blob-scene-haikei.svg";
+import { Socials } from "@/lib/renders/mapData";
 
 function SimpleSlider() {
   var settings = {
@@ -43,8 +40,8 @@ function SimpleSlider() {
             and always down for a quick coffee &#9749; or beer &#127867;!
           </p>
           <p className="mb-3 rounded-2xl bg-slate-50/50 p-3 text-left  shadow-lg">
-            I love sports &#127938; &#127936; &#127952; &#127947;, travelling &#128745;,
-            and hiking &#127956; &#127957; - to name a few!
+            I love sports &#127938; &#127936; &#127952; &#127947;, travelling
+            &#128745;, and hiking &#127956; &#127957; - to name a few!
           </p>
         </div>
         <div>
@@ -74,36 +71,7 @@ function SimpleSlider() {
     </div>
   );
 }
-const Socials = () => {
-  return (
-    <>
-      <Link
-        href="https://www.linkedin.com/in/ralph-tungol/"
-        target="_blank"
-        className="mx-3 transition delay-150 duration-300 ease-in-out hover:-translate-y-1  hover:scale-110"
-        rel="noopener noreferrer"
-      >
-        <Image src={LinkedInIcon} width={50} />
-      </Link>
-      <Link
-        href="mailto:rarttungol@gmail.com"
-        target="_blank"
-        className="mx-3 transition delay-150 duration-300 ease-in-out hover:-translate-y-1  hover:scale-110"
-        rel="noopener noreferrer"
-      >
-        <Image src={EmailIcon} width={50} />
-      </Link>
-      <Link
-        href="https://github.com/tungolra"
-        target="_blank"
-        className="mx-3 transition delay-150 duration-300 ease-in-out hover:-translate-y-1  hover:scale-110"
-        rel="noopener noreferrer"
-      >
-        <Image src={GitHubIcon} width={50} />
-      </Link>
-    </>
-  );
-};
+
 export default function Header() {
   return (
     <header className="z-10 flex h-screen flex-col md:max-w-full md:flex-row">
@@ -125,7 +93,10 @@ export default function Header() {
         </div>
       </div>
       <div className="flex h-1/2 items-end justify-end md:h-full md:w-1/2">
-        <Image src={BlobI} className="hidden md:block absolute -z-40 object-cover h-full w-full"/>
+        <Image
+          src={BlobI}
+          className="absolute -z-40 hidden h-full w-full object-cover md:block"
+        />
         <Image
           src="/profile-picture-nobgd.png"
           alt="profile-picture"
