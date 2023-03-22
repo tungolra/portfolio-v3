@@ -21,15 +21,19 @@ const colours = [
 
 export default function Services() {
   return (
-    <div id="services" className=" py-10">
-      <h2 className="mb-10 w-full px-4 text-4xl font-bold uppercase text-blue-500 text-center tracking-widest">Services</h2>
-      <div className="mx-auto flex max-w-6xl flex-wrap justify-center">
+    <div id="services" className=" py-10 ">
+      <h2 className="mb-10 w-full px-4 text-center text-4xl font-bold uppercase tracking-widest text-blue-500">
+        Services
+      </h2>
+      <div className="mx-auto flex max-w-6xl flex-wrap justify-center rounded-3xl bg-slate-50/50 p-2">
         {services.map((service, idx) => (
           <div
             key={service}
-            className={`${colours[idx]} my-5 mx-2 p-5 flex mb:h-64 mb:w-64 items-center justify-center rounded-full border-2 border-solid hover:shadow-lg md:m-3 md:h-56 md:w-56`}
+            className={`${colours[idx]} mb:h-64 mb:w-64 my-5 mx-2 flex transform items-center justify-center rounded-full border-2 border-solid p-5 transition hover:scale-110 hover:shadow-lg md:m-3 md:h-56 md:w-56`}
           >
-            <span className="font-bold text-white text-center text-lg md:text-base">{service}</span>
+            <span className="text-center text-lg font-bold text-white md:text-base">
+              {service}
+            </span>
           </div>
         ))}
       </div>

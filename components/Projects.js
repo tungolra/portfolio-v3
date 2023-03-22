@@ -5,6 +5,8 @@ import "slick-carousel/slick/slick-theme.css";
 import { projects } from "@/lib/data/seed";
 import Image from "next/image";
 
+const featured = projects.filter((project) => project.type === "project");
+const preview = projects.filter((project) => project.type === "preview");
 
 const Badge = ({ children }) => {
   return (
@@ -13,9 +15,6 @@ const Badge = ({ children }) => {
     </span>
   );
 };
-
-const featured = projects.filter((project) => project.type === "project");
-const preview = projects.filter((project) => project.type === "preview");
 
 function SimpleSlider({ project }) {
   var settings = {
@@ -75,7 +74,7 @@ const renderProjects = (projectList) =>
         className="mb-10 grid grid-cols-1 rounded-3xl bg-slate-50/50 p-5 lg:grid-cols-2 xl:gap-x-12"
       >
         <div
-          className={`mb-5 relative flex flex-col items-center justify-center lg:col-span-1 ${
+          className={`relative mb-5 flex flex-col items-center justify-center lg:col-span-1 ${
             index % 2 == 0 ? "" : "lg:order-last"
           }`}
         >
@@ -87,25 +86,8 @@ const renderProjects = (projectList) =>
             height={500}
             src={project.img}
             alt={project.name}
-            className="aspect-video w-full border-2 border-solid border-gray-400 object-cover rounded-2xl" // take out borders
+            className="aspect-video w-full rounded-2xl border-2 border-solid border-gray-400 object-cover" // take out borders
           />
-          {/* <div className=" grid grid-cols-2 ">
-            {project.pages.slice(0, 2).map((page) => (
-              <div
-                key={page}
-                className="relative flex flex-col items-center justify-center "
-              >
-                <Image
-                  key={page}
-                  width={500}
-                  height={500}
-                  src={page}
-                  alt={project.name}
-                  className="aspect-video w-full border-2 border-solid border-gray-400 object-cover" // take out borders
-                />
-              </div>
-            ))}
-          </div> */}
           <div className="absolute z-10 hidden h-full w-full items-center justify-center bg-black bg-opacity-70">
             <a
               isDisabled={project.site === "[offline]"}
