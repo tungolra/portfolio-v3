@@ -1,5 +1,4 @@
 import { skills } from "@/lib/data/seed.js";
-// import { renderSkillList } from "@/lib/renders/mapData";
 import Image from "next/image";
 const useful = skills.filter((item) => item.priority === "useful");
 const main = skills.filter((item) => item.priority === "main");
