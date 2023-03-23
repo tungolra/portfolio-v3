@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { education } from "@/lib/data/seed";
 import BlobI from "@/public/blob-scene-haikei.svg";
-import { Socials } from "@/lib/renders/mapData";
+import { Socials } from "@/lib/custom";
 
 function SimpleSlider() {
   var settings = {

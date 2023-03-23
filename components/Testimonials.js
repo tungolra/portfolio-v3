@@ -1,4 +1,4 @@
-import { TestimonialSlider } from "@/lib/renders/mapData";
+import { TestimonialSlider } from "@/lib/custom";
 
 const recommendations = [
   {
