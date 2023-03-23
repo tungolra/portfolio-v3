@@ -39,10 +39,23 @@ export default function Home() {
         />
       </svg>
       <Head>
-        <title>Ralph Tungol Portfolio</title>
-        <meta name="description" content="Ralph Tungol Portfolio" />
+        <meta
+          name="description"
+          content="Front-End Software Engineer specializing in Next.js and TypeScript. 5+ years of professional experience with a background in multidisciplinary studies."
+        />
+        <meta
+          name="keywords"
+          content="software developer, full stack development, UI/UX design, project management, agile workflows"
+        />
+        <meta name="author" content="Ralph Tungol" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/header-background.svg" />
+        <link
+          rel="alternate"
+          hrefLang="fr"
+          href="https://ralphtungol.vercel.app/"
+        />
+        <link rel="canonical" href="https://ralphtungol.vercel.app/" />
       </Head>
       <About />
       <Navbar />

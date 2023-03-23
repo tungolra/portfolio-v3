@@ -15,21 +15,21 @@ const PoweredBy = () => {
           height={100}
           className="mr-1 h-10 w-10"
           src={NextIcon}
-          alt="placeholder1"
+          alt="NextIcon"
         />
         <Image
           width={100}
           height={100}
           className="mr-1 h-10 w-10"
           src={ReactIcon}
-          alt="placeholder2"
+          alt="ReactIcon"
         />
         <Image
           width={100}
           height={100}
           className="mr-1 h-10 w-10"
           src={VercelIcon}
-          alt="placeholder3"
+          alt="VercelIcon"
         />
       </div>
     </>

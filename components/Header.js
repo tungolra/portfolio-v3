@@ -22,7 +22,7 @@ function SimpleSlider() {
         <div className="flex items-center ">
           <p className="mb-3 rounded-2xl bg-slate-50/50 p-3 text-left  shadow-lg">
             Thanks for stopping by! I&apos;m Ralph, a{" "}
-            <span className="font-bold text-blue-500">software developer</span>{" "}
+            <span className="font-bold text-blue-500">software engineer</span>{" "}
             with a background in the{" "}
             <span className="font-bold text-blue-500">
               social sciences and finance industry
@@ -56,6 +56,7 @@ function SimpleSlider() {
                   width={50}
                   height={50}
                   className="rounded-full object-contain "
+                  alt={item.school}
                 />
 
                 <div className="flex flex-col text-right ">
@@ -76,12 +77,12 @@ export default function Header() {
   return (
     <header className="z-10 flex h-screen flex-col md:max-w-full md:flex-row">
       <div className="my-10 flex flex-col justify-center  px-10 text-center md:w-1/2 ">
-        <h2 className="w-full px-4 text-5xl font-bold uppercase tracking-widest text-blue-900 md:text-left">
+        <h1 className="w-full px-4 text-5xl font-bold uppercase tracking-widest text-blue-900 md:text-left">
           Ralph Tu&#241;gol
+        </h1>
+        <h2 className=" w-full px-4 text-2xl font-bold uppercase text-blue-700 md:text-left">
+          Front-End Software Engineer
         </h2>
-        <h3 className=" w-full px-4 text-2xl font-bold uppercase text-blue-700 md:text-left">
-          Full-Stack Software Developer
-        </h3>
         <div className="container mx-auto max-w-2xl lg:max-w-4xl lg:py-20">
           <SimpleSlider />
         </div>
@@ -96,6 +97,7 @@ export default function Header() {
         <Image
           src={BlobI}
           className="absolute -z-40 hidden h-full w-full object-cover md:block"
+          alt="blob-background"
         />
         <Image
           src="/profile-picture-nobgd.png"

@@ -23,6 +23,7 @@ const renderSkillList = (skillList, heading) => (
             width={100}
             height={100}
             className="h-20 w-20 object-contain transition delay-150 duration-300 ease-in-out hover:-translate-y-1  hover:scale-110"
+            alt={skill.skill}
           />
           <span className="text-center text-lg md:text-base ">
             {skill.skill}
