@@ -23,6 +23,7 @@ function SimpleSlider({ project }) {
     infinite: true,
     speed: 1000,
     autoplay: true,
+    lazyLoad: true,
     autoplaySpeed: 15000,
     slidesToShow: 1,
     slidesToScroll: 1,

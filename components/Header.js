@@ -12,6 +12,7 @@ function SimpleSlider() {
     fade: true,
     speed: 1000,
     autoplay: true,
+    lazyLoad: true,
     autoplaySpeed: 15000,
     slidesToShow: 1,
     slidesToScroll: 1,

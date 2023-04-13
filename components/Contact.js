@@ -118,7 +118,7 @@ export default function Contact() {
       </div>
 
       <div className="flex flex-col justify-between bg-gradient-to-r from-green-400 to-blue-500 p-4 drop-shadow-2xl md:flex-row">
-        <div className="font-bold uppercase">
+        <div className="flex font-bold uppercase items-center">
           <p>Ralph Tu&#241;gol {new Date().getFullYear()}</p>
         </div>
         <div className="flex flex-row items-center font-bold uppercase">
