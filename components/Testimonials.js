@@ -23,7 +23,7 @@ export default function Testimonials() {
       id="recommendations"
       className="mb-10 flex flex-col justify-center"
     >
-      <h2 className="mb-10 w-full px-4 text-center text-4xl font-bold uppercase tracking-widest text-blue-500">
+      <h2 className="fontTwo mb-10 w-full px-4 text-center text-4xl font-bold uppercase tracking-widest text-blue-500">
         Testimonials
       </h2>
       <TestimonialSlider data={recommendations} />

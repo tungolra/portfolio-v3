@@ -25,7 +25,7 @@ const renderSkillList = (skillList, heading) => (
             className="h-20 w-20 object-contain transition delay-150 duration-300 ease-in-out hover:-translate-y-1  hover:scale-110"
             alt={skill.skill}
           />
-          <span className="text-center text-lg md:text-base ">
+          <span className="fontFour text-center text-lg md:text-base tracking-widest ">
             {skill.skill}
           </span>
         </div>
@@ -37,13 +37,13 @@ const renderSkillList = (skillList, heading) => (
 export default function TechStack() {
   return (
     <div id="skills" className="mx-auto p-3 md:max-w-7xl md:p-10">
-      <h2 className="mb-10 w-full px-4 text-center text-4xl font-bold uppercase tracking-widest text-blue-500">
+      <h2 className="fontTwo mb-10 w-full px-4 text-center text-4xl font-bold uppercase tracking-widest text-blue-500">
         My Toolkit &#128187;{" "}
       </h2>
       {renderSkillList(main, "My specialties!")}
-      {renderSkillList(alternative, "I also love using...")}
-      {renderSkillList(essential, "Can't forget the essentials!")}
-      {renderSkillList(useful, "These come in handy!")}
+      {/* {renderSkillList(alternative, "I also love using...")} */}
+      {/* {renderSkillList(essential, "Can't forget the essentials!")} */}
+      {/* {renderSkillList(useful, "These come in handy!")} */}
     </div>
   );
 }

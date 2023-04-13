@@ -10,7 +10,7 @@ const preview = projects.filter((project) => project.type === "preview");
 
 const Badge = ({ children }) => {
   return (
-    <span className="mx-1 inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800">
+    <span className="fontFour tracking-widest mx-1 inline-flex items-center rounded-full bg-green-300 px-2.5 py-0.5 text-xs font-medium text-green-800">
       {children}
     </span>
   );
@@ -23,7 +23,7 @@ function SimpleSlider({ project }) {
     infinite: true,
     speed: 1000,
     autoplay: true,
-    autoplaySpeed: 7000,
+    autoplaySpeed: 15000,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
@@ -32,10 +32,10 @@ function SimpleSlider({ project }) {
     <div className="max-w-2xl lg:max-w-4xl ">
       <Slider {...settings}>
         <div className="px-5">
-          <h3 className="mb-2 text-2xl font-bold uppercase tracking-widest">
+          <h3 className="fontFour text-purple-700 mb-2 text-2xl font-bold uppercase tracking-widest">
             About This Project
           </h3>
-          <p className="mb-6 text-justify text-lg text-gray-600 ">
+          <p className="fontTwo mb-6 text-justify text-lg text-gray-600 ">
             {project.summary}
           </p>
           <div className="mb-4">
@@ -45,18 +45,18 @@ function SimpleSlider({ project }) {
           </div>
         </div>
         <div className="px-5">
-          <h3 className="mb-2 text-2xl font-bold uppercase tracking-widest">
+          <h3 className="fontFour text-purple-700 mb-2 text-2xl font-bold uppercase tracking-widest">
             Responsibilities
           </h3>
           <ul className="mb-6 text-lg text-gray-600">
             {project.responsibilities.map((responsibility, idx) => (
               <li
                 key={idx}
-                className={`text-left ${
+                className={`fontTwo text-left ${
                   idx % 2 == 1 ? "text-slate-500" : "text-gray-700"
                 }`}
               >
-                - {responsibility}
+                &bull; {responsibility}
               </li>
             ))}
           </ul>
@@ -71,14 +71,14 @@ const renderProjects = (projectList) =>
     <>
       <div
         key={project.name}
-        className="mb-10 grid grid-cols-1 rounded-3xl bg-slate-50/50 p-5 lg:grid-cols-2 xl:gap-x-12"
+        className=" mb-10 grid grid-cols-1 rounded-3xl bg-slate-50/50 p-5 lg:grid-cols-2 xl:gap-x-12"
       >
         <div
           className={`relative mb-5 flex flex-col items-center justify-center lg:col-span-1 ${
             index % 2 == 0 ? "" : "lg:order-last"
           }`}
         >
-          <h3 className="mb-2 font-sans text-2xl font-bold uppercase tracking-widest">
+          <h3 className="fontFour text-purple-700 mb-2 text-2xl font-bold uppercase tracking-widest">
             {project.name}
           </h3>
           <Image
@@ -116,16 +116,20 @@ const renderProjects = (projectList) =>
               isDisabled={project.site === "[offline]"}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50"
+              className="fontFour uppercase rounded-md bg-purple-500 px-4 py-2 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50"
             >
               Visit Site
             </a>
+
+            <div className="fontFour px-4 py-2 italic">
+              Created: {project.created}
+            </div>
 
             <a
               href={project.repo}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50"
+              className="fontFour uppercase rounded-md bg-purple-500 px-4 py-2 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50"
             >
               View Code
             </a>
@@ -145,12 +149,12 @@ export default function Projects() {
   return (
     <div id="projects" className=" text-center ">
       <div className="mb-8 ">
-        <h2 className="mb-10 w-full px-4 text-center text-4xl font-bold uppercase tracking-widest text-blue-500">
+        <h2 className="fontTwo mb-10 w-full px-4 text-center text-4xl font-bold uppercase tracking-widest text-blue-500">
           Featured Projects
         </h2>
         <div className="flex items-center justify-center ">
           <button
-            className={`mr-4 text-xl font-bold hover:text-blue-700 ${
+            className={`fontTwo mr-4 text-xl font-bold hover:text-blue-700 ${
               page ? "font-bold text-blue-500" : "text-gray-400"
             }`}
             onClick={toggleShowFeatured}
@@ -158,7 +162,7 @@ export default function Projects() {
             Featured
           </button>
           <button
-            className={`text-xl font-bold hover:text-gray-700 ${
+            className={`fontTwo text-xl font-bold hover:text-gray-700 ${
               !page ? "text-gray-700" : "text-gray-400"
             }`}
             onClick={toggleShowFeatured}
